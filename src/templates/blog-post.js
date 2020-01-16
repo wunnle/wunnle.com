@@ -1,12 +1,17 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
+import Layout from '../components/Layout'
 import Post from '../components/Post'
 
 function Template({ data }) {
   const { markdownRemark: post } = data
 
-  return <Post postData={post} />
+  return (
+    <Layout>
+      <Post postData={post} />
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`
