@@ -3,28 +3,20 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout'
-
-// import '../css/index.css'; // add some style if you want!
+import PostCard from '../components/PostCard'
+import PostList from '../components/PostList'
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
     <Layout>
-      <div className="blog-posts">
+      <PostList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
-            return (
-              <div className="blog-post-preview" key={post.id}>
-                <h1>
-                  <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-                </h1>
-                <h2>{post.frontmatter.date}</h2>
-                <p>{post.excerpt}</p>
-              </div>
-            )
+            return <PostCard post={post} />
           })}
-      </div>
+      </PostList>
     </Layout>
   )
 }
@@ -38,8 +30,21 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            category
             date(formatString: "MMMM DD, YYYY")
             path
+            featuredImg {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+          fields {
+            readingTime {
+              text
+            }
           }
         }
       }

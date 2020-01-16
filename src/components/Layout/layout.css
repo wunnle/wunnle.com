@@ -618,7 +618,16 @@ pre tt:after {
 
 .wrapper > main {
   flex: 1;
-  padding-top: 100px;
   width: 1260px;
   max-width: 100%;
+}
+
+@media screen and (min-width: 1300px) {
+  .wrapper > main {
+    padding-top: 100px;
+  }
+}
+
+a {
+  text-decoration: none;
 }

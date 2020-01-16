@@ -38,7 +38,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [] // just in case those previously mentioned remark plugins sound cool :)
+        plugins: [`gatsby-remark-reading-time`] // just in case those previously mentioned remark plugins sound cool :)
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

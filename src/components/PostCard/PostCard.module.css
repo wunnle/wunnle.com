@@ -1,0 +1,72 @@
+.postCard {
+  display: flex;
+  background-position: center bottom;
+  flex-direction: row;
+  width: 340px;
+  height: 440px;
+  margin-bottom: 46px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.18);
+  padding: 26px;
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 40px;
+  transition: transform cubic-bezier(0.35, 1.21, 1, 1) 0.16s;
+  background: blue;
+  /* TODO  remove*/
+}
+@media screen and (max-width: 1220px) {
+  .postCard {
+    width: 320px;
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .postCard {
+    width: 320px;
+    margin: 15px 15px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .postCard {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+    margin: 15px 20px;
+    height: 360px;
+    background-size: cover !important;
+  }
+}
+.postCard:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px 17px rgba(0, 0, 0, 0.2);
+}
+.postCardInner {
+  align-self: flex-end;
+  color: white;
+}
+.category,
+.timeToRead,
+.date {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0.2px;
+}
+.date {
+  margin-right: 12px;
+  display: inline-block;
+}
+.title {
+  font-size: 40px;
+  line-height: 38px;
+  margin: 6px 0 10px;
+}
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 30px;
+    line-height: 28px;
+    margin: 6px 0 3px;
+  }
+}
