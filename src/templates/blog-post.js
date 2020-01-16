@@ -22,6 +22,19 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        category
+        featuredImg {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

@@ -1,0 +1,40 @@
+.meCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: -122px;
+}
+
+@media screen and (max-width: 800px) {
+  .meCard {
+    margin-top: -80px;
+  }
+}
+
+.info {
+  margin-left: 14px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.date {
+  color: rgba(150, 150, 150, 0.8);
+  font-size: 13px;
+  margin: 0;
+  line-height: 13px;
+}
+
+.meCard img {
+  width: 38px;
+  height: 38px;
+  background: #d2c4c4;
+  border-radius: 100%;
+  display: block;
+  position: relative;
+  top: 2px;
+}

@@ -1,0 +1,90 @@
+.post {
+  width: 740px;
+  max-width: 100%;
+  margin: 100px auto 200px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.post *::selection {
+  background: #f69226;
+  color: white;
+}
+.details {
+  text-align: left;
+  margin-bottom: 45px;
+}
+.details span {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(150, 150, 150, 0.8);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 14px;
+}
+.details a {
+  font-weight: 500;
+  line-height: normal;
+  font-size: 13px;
+  color: rgba(150, 150, 150, 0.8);
+  text-transform: uppercase;
+  margin-bottom: -8px;
+  margin-right: 14px;
+  letter-spacing: 0.04em;
+}
+.content {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  font-size: 20px;
+  color: #3b4c56;
+}
+.content a,
+.content a:visited {
+  color: #0079ff;
+}
+.content strong {
+  font-weight: 500;
+  color: #31404a;
+}
+.content hr {
+  opacity: 0.4;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.content .footnote {
+  font-size: 0.9em;
+  line-height: 1.68em;
+  opacity: 0.9;
+}
+.post h1,
+.post h1 a {
+  font-size: 53px;
+  line-height: 55px;
+  color: #242121;
+  letter-spacing: -0.03em;
+}
+@media screen and (max-width: 500px) {
+  .post h1,
+  .post h1 a {
+    font-size: 30px;
+    line-height: 1.02;
+  }
+}
+.post h1 {
+  margin: 7px 0;
+  text-align: left;
+}
+.post h2 {
+  font-size: 30px;
+  color: #242121;
+  margin-top: 80px;
+}
+@media screen and (max-width: 500px) {
+  .post h2 {
+    font-size: 24px;
+  }
+}
+
+.content p + p {
+  margin-top: 34px;
+}
