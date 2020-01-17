@@ -32,7 +32,9 @@ function SEO({ description, lang = 'en', meta, title, image }) {
   const { siteMetadata } = site
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image ? `${siteMetadata.siteUrl}${image}` : null
+  const metaImage = image
+    ? `${siteMetadata.siteUrl}${image}`
+    : `${siteMetadata.siteUrl}/wide-logo.jpg`
 
   return (
     <Helmet
@@ -60,7 +62,7 @@ function SEO({ description, lang = 'en', meta, title, image }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary_large_image`
         },
         {
           name: `twitter:creator`,
@@ -77,23 +79,16 @@ function SEO({ description, lang = 'en', meta, title, image }) {
         {
           name: 'twitter:creator',
           content: siteMetadata.social.twitter
+        },
+        {
+          property: 'og:image',
+          content: metaImage
+        },
+        {
+          name: 'twitter:image',
+          content: metaImage
         }
-      ]
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: 'og:image',
-                  content: metaImage
-                },
-                {
-                  name: 'twitter:image',
-                  content: metaImage
-                }
-              ]
-            : []
-        )
-        .concat(meta)}
+      ].concat(meta)}
     />
   )
 }

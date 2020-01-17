@@ -5,11 +5,16 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import PostCard from '../components/PostCard'
 import PostList from '../components/PostList'
+import SEO from '../components/Seo'
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
+
+  const { title, description } = data.site.siteMetadata
+
   return (
     <Layout>
+      <SEO title={title} description={description} />
       <PostList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
@@ -23,6 +28,17 @@ export default function Index({ data }) {
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        siteUrl
+        social {
+          twitter
+        }
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

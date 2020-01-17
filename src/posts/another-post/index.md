@@ -4,7 +4,7 @@ date: 2017-07-12T17:12:33.962Z
 title: "Just another post"
 category: "Fun"
 featuredImg: "./react-snap.jpg"
-socialImg: "./react-snap.jpg"
+socialImg: "./react-social.jpg"
 
 ---
 
