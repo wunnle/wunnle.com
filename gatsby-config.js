@@ -2,7 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Wunnle Blog`,
     description: `A blog about front-end development, design and maybe some short stories.`,
-    author: `@wunnle`
+    author: `@wunnle`,
+    siteUrl: 'https://wunnle.com',
+    social: {
+      twitter: '@wunnle'
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,7 +52,13 @@ module.exports = {
         plugins: [
           `gatsby-remark-reading-time`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-responsive-iframe`
+          `gatsby-remark-responsive-iframe`,
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷'
+            }
+          }
         ]
       }
     }
