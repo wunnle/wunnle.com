@@ -1,19 +1,19 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import MeCard from '../MeCard'
+import SEO from '../Seo'
 import styles from './Post.module.css'
 
 const Post = ({ postData }) => {
   const { frontmatter } = postData
 
-  const { title, date, category, featuredImg } = frontmatter
+  const { title, date, category, socialImg, excerpt } = frontmatter
 
-  const imgUrl = featuredImg.childImageSharp.sizes.src
+  const imgUrl = socialImg.childImageSharp.sizes.src
 
   return (
     <div className={styles.post}>
-      <Helmet title={`Your Blog Name - ${title}`} />
+      <SEO title={title} image={imgUrl} description={excerpt} />
       <MeCard date={date} />
       <div className={styles.inner}>
         <hgroup>

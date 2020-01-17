@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang = 'en', meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,13 +19,20 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+            social {
+              twitter
+            }
           }
         }
       }
     `
   )
 
+  const { siteMetadata } = site
+
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image ? `${siteMetadata.siteUrl}${image}` : null
 
   return (
     <Helmet
@@ -66,8 +73,27 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          name: 'twitter:creator',
+          content: siteMetadata.social.twitter
         }
-      ].concat(meta)}
+      ]
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: 'og:image',
+                  content: metaImage
+                },
+                {
+                  name: 'twitter:image',
+                  content: metaImage
+                }
+              ]
+            : []
+        )
+        .concat(meta)}
     />
   )
 }
