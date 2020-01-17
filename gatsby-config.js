@@ -22,7 +22,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -38,7 +45,11 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [`gatsby-remark-reading-time`]
+        plugins: [
+          `gatsby-remark-reading-time`,
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-responsive-iframe`
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
