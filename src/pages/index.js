@@ -50,6 +50,9 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             featuredImg {
+              colors {
+                ...GatsbyImageColors
+              }
               childImageSharp {
                 sizes(maxWidth: 630) {
                   ...GatsbyImageSharpSizes

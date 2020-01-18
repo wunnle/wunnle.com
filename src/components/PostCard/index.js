@@ -9,13 +9,14 @@ const PostCard = ({ post }) => {
   const { title, date, category, featuredImg } = frontmatter
 
   const imgUrl = featuredImg.childImageSharp.sizes.src
+  const imgBgColors = featuredImg.colors
 
   return (
     <Link to={`/${post.frontmatter.path}`}>
       <div
         className={styles.postCard}
         style={{
-          backgroundImage: `url(${imgUrl})`
+          background: `url(${imgUrl}) ${imgBgColors.darkVibrant}`
         }}
       >
         <div className={styles.postCardInner}>
