@@ -53,6 +53,7 @@ module.exports = {
           `gatsby-remark-reading-time`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-external-links`,
           {
             resolve: '@weknow/gatsby-remark-codepen',
             options: {
