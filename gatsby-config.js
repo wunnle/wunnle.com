@@ -54,6 +54,13 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-responsive-iframe`,
           {
+            resolve: '@weknow/gatsby-remark-codepen',
+            options: {
+              theme: 'dark',
+              height: 400
+            }
+          },
+          {
             resolve: 'gatsby-remark-prismjs',
             options: {
               inlineCodeMarker: '÷'

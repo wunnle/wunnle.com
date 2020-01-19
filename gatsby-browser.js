@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 
-require('./src/css/prism-okaidia.css')
+require('./src/css/prism-atom-dark.css')
