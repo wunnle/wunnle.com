@@ -1,6 +1,5 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import Intro from '../components/Intro'
 import Layout from '../components/Layout'
