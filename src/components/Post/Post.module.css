@@ -88,3 +88,9 @@
 .content p + p {
   margin-top: 34px;
 }
+
+@media screen and (max-width: 1000px) {
+  .post {
+    margin-top: 160px;
+  }
+}

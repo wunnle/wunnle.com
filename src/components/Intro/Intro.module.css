@@ -1,0 +1,43 @@
+.intro {
+  padding: 80px 40px 20px;
+  box-sizing: border-box;
+  width: 1260px;
+  max-width: 100%;
+}
+
+.greeting {
+  color: #282c35;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-size: 44px;
+  margin-bottom: 24px;
+}
+
+.description {
+  color: #4f5565;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+
+@media screen and (max-width: 800px) {
+  .intro {
+    padding: 80px 40px 0;
+  }
+
+  .greeting {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .description {
+    font-size: 26px;
+  }
+
+  .description br {
+    display: none;
+  }
+}
+
+.intro {
+}

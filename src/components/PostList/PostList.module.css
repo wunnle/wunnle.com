@@ -1,7 +1,7 @@
 .posts {
   display: flex;
   flex-wrap: wrap;
-  margin: 100px auto;
+  margin: 0 auto;
   justify-content: start;
 }
 .posts a {

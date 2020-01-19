@@ -2,6 +2,7 @@ import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import Intro from '../components/Intro'
 import Layout from '../components/Layout'
 import PostCard from '../components/PostCard'
 import PostList from '../components/PostList'
@@ -15,6 +16,7 @@ export default function Index({ data }) {
   return (
     <Layout>
       <SEO title={title} description={description} />
+      <Intro />
       <PostList>
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
