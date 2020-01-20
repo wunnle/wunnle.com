@@ -1,5 +1,5 @@
 .intro {
-  padding: 80px 40px 20px;
+  padding: 25px 40px 20px;
   box-sizing: border-box;
   width: 1260px;
   max-width: 100%;
@@ -15,9 +15,10 @@
 
 .description {
   color: #4f5565;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.3em;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 800px) {
