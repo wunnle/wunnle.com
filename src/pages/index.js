@@ -10,11 +10,11 @@ import SEO from '../components/Seo'
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
 
-  const { title, description } = data.site.siteMetadata
+  const { description } = data.site.siteMetadata
 
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <SEO title={'Home'} description={description} />
       <Intro />
       <PostList>
         {posts
