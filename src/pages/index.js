@@ -20,7 +20,7 @@ export default function Index({ data }) {
         {posts
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
-            return <PostCard post={post} />
+            return <PostCard post={post} key={post.id} />
           })}
       </PostList>
     </Layout>

@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
   const imgBgColors = featuredImg.colors
 
   return (
-    <Link to={`/${post.frontmatter.path}`}>
+    <Link to={post.frontmatter.path}>
       <div
         className={styles.postCard}
         style={{
