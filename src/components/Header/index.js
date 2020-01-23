@@ -11,7 +11,6 @@ const Header = () => {
           <img className={styles.logo} src={logo} width="150" alt="wunnle logo" />
         </a>
         <nav className={styles.nav}>
-          <a href="https://blog.wunnle.com/">Blog</a>
           <a href="https://wunnle.dev/">Portfolio</a>
           <a
             className={styles.contactLink}
