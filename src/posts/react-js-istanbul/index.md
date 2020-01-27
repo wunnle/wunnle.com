@@ -1,6 +1,6 @@
 ---
 path: "/react-js-istanbul"
-date: 2020-01-24
+date: 2020-01-27
 title: "ReactJS Istanbul meetup"
 category: "react"
 featuredImg: "./post.jpg"
