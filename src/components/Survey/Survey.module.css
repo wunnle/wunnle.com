@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(16, 36, 100, 0.98) 0%, rgba(16, 36, 100, 0.98) 100%), linear-gradient(180deg, #FFFFFF 0%, #EDE7E7 100%);;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.container {
+  max-width: 450px;
+  min-width: 375px;
+  height: 500px;
+  max-height: 100%;
+  background: linear-gradient(180deg, #102464 0%, #102464 100%), linear-gradient(180deg, #FFFFFF 0%, #EDE7E7 100%);
+}
+
+.content {
+  padding: 20px;
+}
+
+.coinHolder {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.coinHolder img + img {
+  margin-left: 12px;
+}

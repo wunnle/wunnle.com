@@ -1,0 +1,20 @@
+.topic {
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.topic + .topic {
+  margin-top: 10px;
+}
+
+.coinHolder img {
+  transform: scale(0.8);
+  border: 2px solid white;
+  border-radius: 100%;
+}
+
+.coinHolder img + img {
+  margin-left: -20px;
+}
