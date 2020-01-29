@@ -16,7 +16,7 @@ Instead of creating a toggle switch from scratch, basically *reskinning* a che
 A – Obviously easier to develop because you don’t have re-invent on and off states, the keyboard shortcuts etc  
 B – Accessible. So users with screen readers or who can’t use a mouse can still interact with you component.
 
-Ok, lets get to it.
+Ok, lets get to it:
 
 ```html
 <label for="checkbox">
