@@ -1,7 +1,7 @@
 .bottomBar {
   position: fixed;
   display: flex;
-  background: rgba(64, 119, 190, 0.12);
+  background: rgba(22, 46, 111, 0.99);
   height: 70px;
   width: 100%;
   max-width: 450px;
@@ -9,6 +9,7 @@
   padding: 0 20px;
   align-items: center;
   justify-content: flex-end;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   bottom: 0;
 }
 
@@ -37,7 +38,7 @@
   color: white;
 }
 
-.cancelButton {
+.resetButton {
   color: #565758;
   background: white;
 }
