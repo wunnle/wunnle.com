@@ -1,8 +1,7 @@
 .wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(16, 36, 100, 0.98) 0%, rgba(16, 36, 100, 0.98) 100%), linear-gradient(180deg, #FFFFFF 0%, #EDE7E7 100%);;
+  background: rgba(35, 56, 122, 0.98);
   height: 100%;
   width: 100%;
   position: fixed;
@@ -11,13 +10,12 @@
 .container {
   max-width: 450px;
   min-width: 375px;
-  height: 500px;
   max-height: 100%;
   background: linear-gradient(180deg, #102464 0%, #102464 100%), linear-gradient(180deg, #FFFFFF 0%, #EDE7E7 100%);
 }
 
 .content {
-  padding: 20px;
+  padding: 10px 20px 100px;
 }
 
 .coinHolder {
@@ -25,6 +23,36 @@
   margin-bottom: 25px;
 }
 
-.coinHolder img + img {
+.fakeCoin {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 100%;
+}
+
+.coinHolder img + img, .coinHolder .fakeCoin + .fakeCoin, .coinHolder img + .fakeCoin {
   margin-left: 12px;
+}
+
+.header {
+  padding: 20px 15px;
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper {
+    align-items: center;
+  } 
+
+  .container {
+    height: 700px;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.20);
+    position: relative;
+  }
 }

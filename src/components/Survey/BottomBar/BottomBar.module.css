@@ -1,0 +1,50 @@
+.bottomBar {
+  position: fixed;
+  display: flex;
+  background: rgba(64, 119, 190, 0.12);
+  height: 70px;
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+}
+
+.bottomBar button {
+  height: 42px;
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.13);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bottomBar button:disabled {
+  opacity: 0.5;
+}
+
+.bottomBar button + button {
+  margin-left: 10px;
+}
+
+.submitButton {
+  background: #F9A71B;
+  color: white;
+}
+
+.cancelButton {
+  color: #565758;
+  background: white;
+}
+
+
+@media screen and (min-width: 700px) {
+  .bottomBar {
+    position: absolute;
+  }
+}
