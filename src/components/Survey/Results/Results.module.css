@@ -1,0 +1,39 @@
+.content {
+  padding: 10px 20px 100px;
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 11px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.result {
+  display: flex;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  height: 38px;
+  align-items: center;
+}
+
+.topicRate {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.topicRate img {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 4px;
+  margin-left: 4px;
+}

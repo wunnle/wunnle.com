@@ -1,24 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useReducer } from 'react'
 
-import BottomBar from './BottomBar'
-import Coin from './Coin'
 import LightLogo from './lightLogo.inline.svg'
+import Questions from './Questions'
+import Results from './Results'
 import styles from './Survey.module.css'
-import Topic from './Topic'
-
-const FakeCoin = () => <div className={styles.fakeCoin}></div>
-
-const CoinHolder = ({ remainingCoins, totalCoins }) => {
-  return (
-    <div className={styles.coinHolder}>
-      {[
-        ...Array(remainingCoins).fill(<Coin />),
-        ...Array(totalCoins - remainingCoins).fill(<FakeCoin />)
-      ]}
-    </div>
-  )
-}
 
 const initialState = {
   totalCoins: 5,
@@ -84,9 +70,8 @@ function upvoteAction(topicKey) {
 }
 
 const Survey = () => {
+  const [isShowingResults, setShowingResults] = useState()
   const [state, dispatch] = useReducer(reducer, initialState)
-
-  const { totalCoins, remainingCoins, topics } = state
 
   function handleTopicClick(key) {
     if (state.remainingCoins) {
@@ -94,26 +79,24 @@ const Survey = () => {
     }
   }
 
+  console.log({ Questions })
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <header className={styles.header}>
           <LightLogo />
         </header>
-        <div className={styles.content}>
-          <CoinHolder remainingCoins={remainingCoins} totalCoins={totalCoins} />
-          <h1 className={styles.title}>
-            How much would you be interested in following topics for our next meeting?
-          </h1>
-          {Object.values(topics).map(t => (
-            <Topic {...t} handleClick={() => handleTopicClick(t.key)} />
-          ))}
-        </div>
-        <BottomBar
-          handleReset={() => dispatch({ type: 'RESET' })}
-          isCancelActive={remainingCoins < totalCoins}
-          isSubmitActive={remainingCoins === 0}
-        />
+        {isShowingResults ? (
+          <Results {...state} />
+        ) : (
+          <Questions
+            {...state}
+            handleReset={() => dispatch({ type: 'RESET' })}
+            handleSubmit={() => setShowingResults(true)}
+            handleTopicClick={handleTopicClick}
+          />
+        )}
       </div>
     </div>
   )
