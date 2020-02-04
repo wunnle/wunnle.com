@@ -6,6 +6,7 @@
   "author": "Sinan Aksay <me@wunnle.com>",
   "dependencies": {
     "@weknow/gatsby-remark-codepen": "^0.1.0",
+    "dayjs": "^1.8.19",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-catch-links": "^2.1.24",
@@ -14,6 +15,7 @@
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-prismjs": "^3.3.30",
