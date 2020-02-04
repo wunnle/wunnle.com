@@ -8,7 +8,7 @@ socialImg: "./social.jpg"
 ---
 
 
-[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are pretty cool. You probably know you can create one like this:
+[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are pretty cool. You probably know you can define one like this:
 
 ```css
 
@@ -38,6 +38,6 @@ document.documentElement.style.setProperty('--donny-brand-color', 'red')
 
 <br>
 
-This is especially useful when you need to tie some style properties to event listeners, like setting the position of element to current mouse position. See this example on codepen:
+This is especially useful when you need to tie some style properties to event listeners, like setting the position of an element to current cursor position. See this example on codepen which brings everything together:
 
 https://codepen.io/wunnle/pen/vYOBOPE?editors=0110
