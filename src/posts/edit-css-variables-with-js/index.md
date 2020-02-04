@@ -27,7 +27,7 @@ and then use it somewhere else later:
 }
 
 ```
-But did you also know that you can modify or create CSS variables from JS side? Here is how you would do it:
+But did you also know that you can modify or create CSS variables from JS side? You can do this using `setProperty` method any element's (in this case `documentElement` since we defined the variable on `:root` scope) `.style` interface.
 
 
 ```js
@@ -36,7 +36,6 @@ document.documentElement.style.setProperty('--donny-brand-color', 'red')
 
 ```
 
-<br>
 
 This is especially useful when you need to tie some style properties to event listeners, like setting the position of an element to current cursor position. See this example on codepen which brings everything together:
 
