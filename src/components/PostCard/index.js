@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
+import getPostDate from '../../utils/helpers/getPostDate'
 import styles from './PostCard.module.css'
 
 const PostCard = ({ post }) => {
@@ -23,7 +24,7 @@ const PostCard = ({ post }) => {
           <div className={styles.category}>{category}</div>
           <h2 className={styles.title}>{title}</h2>
           <div>
-            <span className={styles.date}>{date}</span>
+            <span className={styles.date}> {getPostDate(date)}</span>
             <span className={styles.timeToRead}>{post.fields.readingTime.text}</span>
           </div>
         </div>
