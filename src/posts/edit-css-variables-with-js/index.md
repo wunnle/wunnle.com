@@ -1,6 +1,6 @@
 ---
 path: "/edit-css-variables-with-js"
-date: 2019-03-14
+date: 2020-02-04
 title: "Edit CSS variables with JS"
 category: "javascript"
 featuredImg: "./post.jpg"
@@ -18,7 +18,7 @@ socialImg: "./social.jpg"
 
 ```
 
-and then use it somewhere else like this:
+and then use it somewhere else later:
 
 ```css
 
@@ -27,8 +27,7 @@ and then use it somewhere else like this:
 }
 
 ```
-<br>
-But did you also know that you can modify or create CSS variables from JS side? Here is an example.
+But did you also know that you can modify or create CSS variables from JS side? Here is how you would do it:
 
 
 ```js
@@ -36,3 +35,9 @@ But did you also know that you can modify or create CSS variables from JS side? 
 document.documentElement.style.setProperty('--donny-brand-color', 'red')
 
 ```
+
+<br>
+
+This is especially useful when you need to tie some style properties to event listeners, like setting the position of element to current mouse position. See this example on codepen:
+
+https://codepen.io/wunnle/pen/vYOBOPE?editors=0110
