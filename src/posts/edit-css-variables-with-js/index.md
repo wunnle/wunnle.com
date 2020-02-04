@@ -8,7 +8,7 @@ socialImg: "./social.jpg"
 ---
 
 
-[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are pretty cool. You probably know you can create one like this:
+[CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) are pretty cool. You probably know you can define one like this:
 
 ```css
 
@@ -18,7 +18,7 @@ socialImg: "./social.jpg"
 
 ```
 
-and then use it somewhere else like this:
+and then use it somewhere else later:
 
 ```css
 
@@ -27,8 +27,7 @@ and then use it somewhere else like this:
 }
 
 ```
-<br>
-But did you also know that you can modify or create CSS variables from JS side? Here is an example.
+But did you also know that you can modify or create CSS variables from JS side? You can do this using `setProperty` method any element's (in this case `documentElement` since we defined the variable on `:root` scope) `.style` interface.
 
 
 ```js
@@ -36,3 +35,8 @@ But did you also know that you can modify or create CSS variables from JS side? 
 document.documentElement.style.setProperty('--donny-brand-color', 'red')
 
 ```
+
+
+This is especially useful when you need to tie some style properties to event listeners, like setting the position of an element to current cursor position. See this example on codepen which brings everything together:
+
+https://codepen.io/wunnle/pen/vYOBOPE?editors=0110
