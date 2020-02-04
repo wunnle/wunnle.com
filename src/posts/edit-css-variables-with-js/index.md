@@ -5,6 +5,7 @@ title: "Editing CSS variables with JS"
 category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1224582321552199681"
 ---
 
 

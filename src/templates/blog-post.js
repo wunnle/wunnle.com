@@ -24,6 +24,7 @@ export const pageQuery = graphql`
         path
         title
         category
+        tweet
         featuredImg {
           childImageSharp {
             sizes(maxWidth: 630) {

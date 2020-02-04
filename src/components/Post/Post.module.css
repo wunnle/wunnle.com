@@ -94,3 +94,23 @@
     margin-top: 160px;
   }
 }
+
+.inner {
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 30px;
+  padding-bottom: 40px;
+}
+
+.twitterLink {
+  color: #0079ff;
+  display: flex;
+  font-size: 17px;
+}
+
+.twitterLink:hover {
+  text-decoration: underline;
+}
+
+.twitterLink svg {
+  margin-right: 12px;
+}

@@ -3,11 +3,12 @@ import React from 'react'
 import MeCard from '../MeCard'
 import SEO from '../Seo'
 import styles from './Post.module.css'
+import Twitter from './twitter.inline.svg'
 
 const Post = ({ postData }) => {
   const { frontmatter } = postData
 
-  const { title, date, category, socialImg, excerpt } = frontmatter
+  const { title, date, category, socialImg, excerpt, tweet } = frontmatter
 
   const imgUrl = socialImg.childImageSharp.sizes.src
 
@@ -28,6 +29,16 @@ const Post = ({ postData }) => {
           dangerouslySetInnerHTML={{ __html: postData.html }}
         ></div>
       </div>
+      {tweet && (
+        <a
+          className={styles.twitterLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={tweet}
+        >
+          <Twitter /> Discuss on Twitter
+        </a>
+      )}
     </div>
   )
 }
