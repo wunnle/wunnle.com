@@ -42,6 +42,13 @@
 .content a:visited {
   color: #0079ff;
 }
+.content a:hover,
+.content a:active {
+  color: #036bde;
+  border-bottom: 1px solid #036bde;
+}
+
+
 .content strong {
   font-weight: 500;
   color: #31404a;
@@ -95,22 +102,46 @@
   }
 }
 
-.inner {
-  border-bottom: 1px solid #dedede;
-  margin-bottom: 30px;
-  padding-bottom: 40px;
-}
-
-.twitterLink {
-  color: #0079ff;
+.footer {
+  border-top: 1px solid rgba(222, 222, 222, 0.64);
+  margin-top: 30px;
+  padding-top: 20px;
   display: flex;
-  font-size: 17px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-.twitterLink:hover {
-  text-decoration: underline;
+.footer a {
+  display: flex;
+  height: 38px;
+  align-items: center;
+  color: #0079ff;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-.twitterLink svg {
-  margin-right: 12px;
+.footer a:hover, .footer a:active {
+  color: #036bde;
+}
+
+.footer a + a {
+  margin-left: 38px;
+}
+
+.footer a svg{
+  margin-right: 10px;
+  width: 18px;
+  opacity: 0.52;
+  fill: #002240;
+  transition: opacity 0.15s ease-in;
+}
+
+.footer a:hover svg, .footer a:active svg {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    justify-content: center;
+  }
 }

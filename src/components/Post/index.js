@@ -2,15 +2,23 @@ import React from 'react'
 
 import MeCard from '../MeCard'
 import SEO from '../Seo'
+import GithubIcon from './github.inline.svg'
 import styles from './Post.module.css'
-import Twitter from './twitter.inline.svg'
+import TwitterIcon from './twitter.inline.svg'
 
-const Post = ({ postData }) => {
-  const { frontmatter } = postData
+const Post = ({ postData, siteData }) => {
+  const { frontmatter, fileAbsolutePath } = postData
 
   const { title, date, category, socialImg, excerpt, tweet } = frontmatter
 
   const imgUrl = socialImg.childImageSharp.sizes.src
+
+  const {
+    siteMetadata: { githubRepoUrl }
+  } = siteData
+
+  const editUrl =
+    githubRepoUrl + '/edit/master/' + fileAbsolutePath.match(/src\/posts\/.*/i)[0]
 
   return (
     <div className={styles.post}>
@@ -29,16 +37,22 @@ const Post = ({ postData }) => {
           dangerouslySetInnerHTML={{ __html: postData.html }}
         ></div>
       </div>
-      {tweet && (
-        <a
-          className={styles.twitterLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={tweet}
-        >
-          <Twitter /> Discuss on Twitter
+      <div className={styles.footer}>
+        {tweet && (
+          <a
+            className={styles.twitterLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={tweet}
+          >
+            <TwitterIcon /> Discuss on Twitter
+          </a>
+        )}
+        <a href={editUrl} target="_blank" rel="noopener noreferrer">
+          <GithubIcon />
+          Edit on GitHub
         </a>
-      )}
+      </div>
     </div>
   )
 }
