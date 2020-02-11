@@ -34,7 +34,7 @@ function SEO({ description, lang = 'en', meta, title, image }) {
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image
     ? `${siteMetadata.siteUrl}${image}`
-    : `${siteMetadata.siteUrl}/wide-logo.jpg`
+    : `${siteMetadata.siteUrl}/wide-logo.png`
 
   return (
     <Helmet
