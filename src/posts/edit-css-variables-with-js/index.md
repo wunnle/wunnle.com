@@ -36,31 +36,6 @@ document.documentElement.style.setProperty('--donny-brand-color', 'red')
 
 ```
 
-```js
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-
-import fetchCoffeeImg from './fetchCoffeeHelper.js'
-
-const Coffee = ({ bean, size, children }) => {
-  const [coffeeImg, setCoffeeImg] = useState()
-
-  useEffect(() => {
-    async function fetchCoffeeInfo() {
-      const coffeeImg = await fetchCoffeeImg(bean, size)
-      setCoffeeImg(coffeeImg)
-    }
-
-    fetchCoffeeInfo()
-  }, [bean, size])
-
-  return <img src={coffeeImg} alt={children} />
-}
-
-export default Coffee
-
-```
-
 
 This is especially useful when you need to tie some style properties to event listeners, like setting the position of an element to current cursor position. See this example on codepen which brings everything together:
 
