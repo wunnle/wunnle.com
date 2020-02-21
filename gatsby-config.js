@@ -3,7 +3,8 @@ module.exports = {
     title: `Wunnle Blog`,
     description: `A blog about front-end development, design and maybe some short stories.`,
     author: `@wunnle`,
-    siteUrl: 'https://blog.wunnle.dev',
+    siteUrl: 'https://wunnle.com',
+    githubRepoUrl: 'https://github.com/wunnle/gatsby-blog',
     social: {
       twitter: '@wunnle'
     }
@@ -37,7 +38,7 @@ module.exports = {
       options: {
         useMozJpeg: false,
         stripMetadata: true,
-        defaultQuality: 75
+        defaultQuality: 90
       }
     },
     {

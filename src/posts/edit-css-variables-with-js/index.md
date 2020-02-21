@@ -1,10 +1,11 @@
 ---
 path: "/edit-css-variables-with-js"
 date: 2020-02-04
-title: "Edit CSS variables with JS"
+title: "Editing CSS variables with JS"
 category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1224582321552199681"
 ---
 
 

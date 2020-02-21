@@ -13,8 +13,8 @@ https://codepen.io/wunnle/pen/PeoEXX
 
 Instead of creating a toggle switch from scratch, basically *reskinning* a checkbox is:
 
-A – Obviously easier to develop because you don’t have re-invent on and off states, the keyboard shortcuts etc  
-B – Accessible. So users with screen readers or who can’t use a mouse can still interact with you component.
+A – Obviously easier to develop, because you don’t have re-invent on and off states, the keyboard shortcuts etc  
+B – Accessible. So users with screen readers or who can’t use a mouse can still interact with your component.
 
 Ok, lets get to it:
 
