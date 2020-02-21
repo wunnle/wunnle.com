@@ -695,7 +695,7 @@ pre[class*="language-"] {
 
 .token.class-name {
   color: #ffffb6;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .token.boolean,
@@ -838,8 +838,16 @@ pre[class*="language-"] ::selection {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   border-radius: 0.3em;
-  background: var(--inlineCode-bg);
-  color: var(--inlineCode-text);
-  padding: 0.15em 0.2em 0.05em;
   white-space: normal;
+  background-color: rgba(0,0,0,.04);
+  border-radius: 3px;
+  font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
+  padding: .2em 3px;
+  color: #27333a;
+  font-size: 15px;
+  text-shadow: none;
+}
+
+:not(pre) > code[class*="language-"]:after {
+  display: none;
 }
