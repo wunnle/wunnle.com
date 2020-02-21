@@ -19,7 +19,7 @@ try {
 
 The statement in the `catch` block will be executed *only* if an exception is thrown in the `try` block.
 
-If you need something similar for React components, there is a lesser known feature called **Error Boundaries**. Using error boundaries, when something went wrong, you can show user a fallback screen and log the error.
+If you need something similar for React components, there is a lesser-known feature called **Error Boundaries**. Using error boundaries, when something went wrong, you can show the user a fallback screen and log the error.
 
 An error boundary is a component that catches an error thrown anywhere in the child component tree.
 
