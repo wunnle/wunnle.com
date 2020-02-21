@@ -5,6 +5,8 @@ title: "Error handling in React"
 category: "react"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1230942626913882112"
+
 ---
 
 Normally you'd catch an error in javascript using a `try/catch` block.
