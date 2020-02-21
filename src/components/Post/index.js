@@ -7,9 +7,9 @@ import styles from './Post.module.css'
 import TwitterIcon from './twitter.inline.svg'
 
 const Post = ({ postData, siteData }) => {
-  const { frontmatter, fileAbsolutePath } = postData
+  const { frontmatter, fileAbsolutePath, excerpt } = postData
 
-  const { title, date, category, socialImg, excerpt, tweet } = frontmatter
+  const { title, date, category, socialImg, tweet } = frontmatter
 
   const imgUrl = socialImg.childImageSharp.sizes.src
 
