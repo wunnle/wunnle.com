@@ -844,7 +844,7 @@ pre[class*="language-"] ::selection {
   font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
   padding: .2em 3px;
   color: #27333a;
-  font-size: 15px;
+  font-size: 18px;
   text-shadow: none;
 }
 

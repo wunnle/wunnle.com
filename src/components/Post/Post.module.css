@@ -1,7 +1,7 @@
 .post {
   width: 740px;
   max-width: 100%;
-  margin: 100px auto 200px;
+  margin: 100px auto 0;
   padding: 0 16px;
   box-sizing: border-box;
 }
@@ -81,16 +81,19 @@
   margin: 7px 0;
   text-align: left;
 }
-.post h2 {
+
+.content h2 {
   font-size: 30px;
   color: #242121;
   margin-top: 80px;
 }
 @media screen and (max-width: 500px) {
-  .post h2 {
+  .content h2 {
     font-size: 24px;
   }
 }
+
+
 
 .content p + p {
   margin-top: 34px;
@@ -103,9 +106,10 @@
 }
 
 .footer {
-  border-top: 1px solid rgba(222, 222, 222, 0.64);
-  margin-top: 30px;
+  border-bottom: 1px solid rgba(222, 222, 222, 0.64);
+  margin-top: 50px;
   padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -143,5 +147,21 @@
 @media screen and (max-width: 600px) {
   .footer {
     justify-content: center;
+  }
+}
+
+.recommendedPosts {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+@media screen and (max-width: 500px) {
+  .recommendedPosts {
+    flex-direction: column;
+  }
+
+  .recommendedPosts > a:first-of-type {
+    display: none;
   }
 }

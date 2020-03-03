@@ -1,13 +1,14 @@
 import React from 'react'
 
 import MeCard from '../MeCard'
+import NextPostCard from '../NextPostCard'
 import SEO from '../Seo'
 import GithubIcon from './github.inline.svg'
 import styles from './Post.module.css'
 import TwitterIcon from './twitter.inline.svg'
 
-const Post = ({ postData, siteData }) => {
-  const { frontmatter, fileAbsolutePath, excerpt } = postData
+const Post = ({ post, prevPost, nextPost, siteData }) => {
+  const { frontmatter, fileAbsolutePath, excerpt } = post
 
   const { title, date, category, socialImg, tweet } = frontmatter
 
@@ -29,12 +30,12 @@ const Post = ({ postData, siteData }) => {
           <h1>{title}</h1>
           <div className={styles.details}>
             <span>{category}</span>
-            <span>{postData.fields.readingTime.text}</span>
+            <span>{post.fields.readingTime.text}</span>
           </div>
         </hgroup>
         <div
           className={styles.content}
-          dangerouslySetInnerHTML={{ __html: postData.html }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         ></div>
       </div>
       <div className={styles.footer}>
@@ -52,6 +53,10 @@ const Post = ({ postData, siteData }) => {
           <GithubIcon />
           Edit on GitHub
         </a>
+      </div>
+      <div className={styles.recommendedPosts}>
+        <NextPostCard post={prevPost} />
+        <NextPostCard post={nextPost} />
       </div>
     </div>
   )
