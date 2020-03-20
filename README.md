@@ -1,4 +1,4 @@
-# Gatsby blog
+# wunnle.com
 
 My personal blog on [wunnle.com](https://wunnle.com/) built with Gatsby. It uses markdown files as database and converts them to posts using gatsby-transformer-remark. 
 
