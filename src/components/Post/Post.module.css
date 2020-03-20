@@ -70,7 +70,7 @@
   color: #242121;
   letter-spacing: -0.03em;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .post h1,
   .post h1 a {
     font-size: 30px;
@@ -87,7 +87,7 @@
   color: #242121;
   margin-top: 80px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .content h2 {
     font-size: 24px;
   }
@@ -156,9 +156,17 @@
   padding: 40px 0;
 }
 
-@media screen and (max-width: 500px) {
+.recommendedPosts a {
+  width: calc(50% - 10px);
+}
+
+@media screen and (max-width: 600px) {
   .recommendedPosts {
     flex-direction: column;
+  }
+
+  .recommendedPosts a {
+    width: 100%;
   }
 
   .recommendedPosts > a:first-of-type {
