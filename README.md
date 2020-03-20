@@ -1,6 +1,8 @@
-# wunnle.com
+# [wunnle.com](https://wunnle.com/)
 
-My personal blog on [wunnle.com](https://wunnle.com/) built with Gatsby. It uses markdown files as database and converts them to posts using gatsby-transformer-remark. 
+My personal blog which is mostly about front-end development and UI design. 
+
+It's built with Gatsby. It uses markdown files as database and converts them to posts using gatsby-transformer-remark. 
 
 To run locally, `yarn`, then `yarn start`, and open https://localhost:8000.
 
