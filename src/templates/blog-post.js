@@ -5,9 +5,6 @@ import Layout from '../components/Layout'
 import Post from '../components/Post'
 
 function Template({ data, pageContext }) {
-  console.log({ data })
-  console.log({ pageContext })
-
   const { post, prev, next, site } = data
 
   return (

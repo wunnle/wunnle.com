@@ -1,5 +1,5 @@
 .intro {
-  padding: 25px 40px 20px;
+  padding: 25px 24px 20px;
   box-sizing: border-box;
   width: 1260px;
   max-width: 100%;
@@ -19,6 +19,29 @@
   font-weight: 600;
   line-height: 1.3em;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .intro {
+    padding: 80px 40px 30px;
+    width: 760px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .greeting {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
+  .description {
+    font-size: 28px;
+  }
+
+  .description br {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {

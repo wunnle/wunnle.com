@@ -10,10 +10,8 @@
   padding: 26px;
   box-sizing: border-box;
   text-decoration: none;
-  margin: 40px;
+  margin: 24px;
   transition: transform cubic-bezier(0.35, 1.21, 1, 1) 0.16s;
-  background: blue;
-  /* TODO  remove*/
 }
 @media screen and (max-width: 1220px) {
   .postCard {
