@@ -59,6 +59,13 @@ module.exports = {
         plugins: [
           `gatsby-remark-reading-time`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: 'gatsby-remark-embed-youtube',
+            options: {
+              width: 800,
+              height: 400
+            }
+          },
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-external-links`,
           {

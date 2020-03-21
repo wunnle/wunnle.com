@@ -50,7 +50,7 @@
 
 
 .content strong {
-  font-weight: 500;
+  font-weight: 600;
   color: #31404a;
 }
 .content hr {
@@ -172,4 +172,9 @@
   .recommendedPosts > a:first-of-type {
     display: none;
   }
+}
+
+.post iframe {
+  width: 100%;
+  border: none;
 }
