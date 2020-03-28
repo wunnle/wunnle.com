@@ -80,6 +80,19 @@ module.exports = {
             options: {
               inlineCodeMarker: '÷'
             }
+          },
+          {
+            resolve: `gatsby-remark-footnotes`,
+            options: {
+              footnoteBackRefPreviousElementDisplay: 'inline',
+              footnoteBackRefDisplay: 'inline',
+              footnoteBackRefInnerText: '^', // Defaults to: "↩"
+              //use if you want the Wikipedia style ^ link without an underline beneath it
+              footnoteBackRefAnchorStyle: `text-decoration: none;`,
+              //use "front" for Wikipedia style ^ links
+              footnoteBackRefInnerTextStartPosition: 'front',
+              useFootnoteMarkerText: false // Defaults to false
+            }
           }
         ]
       }

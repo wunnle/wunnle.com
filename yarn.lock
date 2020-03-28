@@ -5606,6 +5606,15 @@ gatsby-remark-external-links@^0.0.4:
     unist-util-find "^1.0.1"
     unist-util-visit "^1.1.3"
 
+gatsby-remark-footnotes@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-footnotes/-/gatsby-remark-footnotes-0.0.7.tgz#14d5888621765c6b8f60f37ae3eedba4908d7c68"
+  integrity sha512-TMtzhbwred2P0xhkL62RduqWtrGvSpcieWsAsss3Xv6+d4XdiccjtrgNIbV4gvPcFkV1upE1ygJQIV9T04pg/A==
+  dependencies:
+    hast-util-to-html "5.0.0"
+    mdast-util-to-hast "5.0.0"
+    unist-util-visit "1.4.0"
+
 gatsby-remark-prismjs@^3.3.30:
   version "3.3.30"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.30.tgz#990203b5d174af9a609e32019a3b62cd5dc16332"
@@ -6429,6 +6438,22 @@ hast-util-raw@^4.0.0:
     web-namespaces "^1.0.0"
     xtend "^4.0.1"
     zwitch "^1.0.0"
+
+hast-util-to-html@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-to-html/-/hast-util-to-html-5.0.0.tgz#8b5c9710adb0689e3603f552f3104de2507aca35"
+  integrity sha512-vYbSEixfYD3CIqd1rN1Q4T0z0Tyodht0jNst940ESz9g7eaFc0FJADMkdVvlHqDsXVok0vji8FukrBfAH91BWQ==
+  dependencies:
+    ccount "^1.0.0"
+    comma-separated-tokens "^1.0.1"
+    hast-util-is-element "^1.0.0"
+    hast-util-whitespace "^1.0.0"
+    html-void-elements "^1.0.0"
+    property-information "^5.0.0"
+    space-separated-tokens "^1.0.0"
+    stringify-entities "^1.0.1"
+    unist-util-is "^2.0.0"
+    xtend "^4.0.1"
 
 hast-util-to-html@^4.0.1:
   version "4.0.1"
@@ -8164,6 +8189,23 @@ mdast-util-definitions@^1.2.0:
   integrity sha512-CJXEdoLfiISCDc2JB6QLb79pYfI6+GcIH+W2ox9nMc7od0Pz+bovcHsiq29xAQY6ayqe/9CsK2VzkSJdg1pFYA==
   dependencies:
     unist-util-visit "^1.0.0"
+
+mdast-util-to-hast@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-to-hast/-/mdast-util-to-hast-5.0.0.tgz#42ca287ee88fcf0a57123816215d5db507b682a7"
+  integrity sha512-Yxx+/mdvhOaz3u4+UHokVMF038IgMIzgnEexjJcFaG3k47RHDEYCRZZE/YWO8pjwkyqT3UdTjCrX89ljkNoxCg==
+  dependencies:
+    collapse-white-space "^1.0.0"
+    detab "^2.0.0"
+    mdast-util-definitions "^1.2.0"
+    mdurl "^1.0.1"
+    trim "0.0.1"
+    trim-lines "^1.0.0"
+    unist-builder "^1.0.1"
+    unist-util-generated "^1.1.0"
+    unist-util-position "^3.0.0"
+    unist-util-visit "^1.1.0"
+    xtend "^4.0.1"
 
 mdast-util-to-hast@^3.0.4:
   version "3.0.4"
@@ -10095,6 +10137,13 @@ property-information@^4.0.0:
   integrity sha512-TlgDPagHh+eBKOnH2VYvk8qbwsCG/TAJdmTL7f1PROUcSO8qt/KSmShEQ/OKvock8X9tFjtqjCScyOkkkvIKVQ==
   dependencies:
     xtend "^4.0.1"
+
+property-information@^5.0.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/property-information/-/property-information-5.4.0.tgz#16e08f13f4e5c4a7be2e4ec431c01c4f8dba869a"
+  integrity sha512-nmMWAm/3vKFGmmOWOcdLjgq/Hlxa+hsuR/px1Lp/UGEyc5A22A6l78Shc2C0E71sPmAqglni+HrS7L7VJ7AUCA==
+  dependencies:
+    xtend "^4.0.0"
 
 proto-list@~1.2.1:
   version "1.2.4"
@@ -12635,6 +12684,13 @@ unist-util-visit-parents@^3.0.0:
   dependencies:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
+
+unist-util-visit@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.0.tgz#1cb763647186dc26f5e1df5db6bd1e48b3cc2fb1"
+  integrity sha512-FiGu34ziNsZA3ZUteZxSFaczIjGmksfSgdKqBfOejrrfzyUy5b7YrlzT1Bcvi+djkYDituJDy2XB7tGTeBieKw==
+  dependencies:
+    unist-util-visit-parents "^2.0.0"
 
 unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3, unist-util-visit@^1.4.1:
   version "1.4.1"
