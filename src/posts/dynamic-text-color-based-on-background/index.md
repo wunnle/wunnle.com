@@ -123,9 +123,9 @@ Chrome DevTools is using this method to get the contrast ratio between color of 
 
 ![webaim contrast checker](./webaim.png)
 
-WebAIM has an [online contrast checker](https://webaim.org/resources/contrastchecker/) show contrast between two colors and WCAG levels.
+WebAIM has an [online contrast checker](https://webaim.org/resources/contrastchecker/) shows contrast between two colors and WCAG levels.
 
 
 
 
-[^1]: To our eyes, green color seem brightest and blue seem the least bright.
+[^1]: To our eyes, green appears brightest while blue appears the least bright.
