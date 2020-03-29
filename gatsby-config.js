@@ -69,10 +69,11 @@ module.exports = {
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-external-links`,
           {
-            resolve: '@weknow/gatsby-remark-codepen',
+            resolve: 'gatsby-remark-codepen',
             options: {
               theme: 'dark',
-              height: 400
+              height: 500,
+              defaultTab: 'result'
             }
           },
           {

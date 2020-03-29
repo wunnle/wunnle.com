@@ -105,7 +105,7 @@ This method is used by [Chrome DevTools](https://developers.google.com/web/updat
 Here is a pen showing this in action:
 
 
-https://codepen.io/wunnle/pen/vYOVbqm?editors=0010
+https://codepen.io/wunnle/pen/vYOVbqm
 
 
 
