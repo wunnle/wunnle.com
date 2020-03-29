@@ -117,7 +117,7 @@ function getTextColor(bgColor) {
 
 ![devtools](./devtools.png)
 
-Chrome DevTools is using this method to get the contrast ratio between any color of any DOM element and it's background. Also rates the contrast according to [WCAG-defined levels](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+Chrome DevTools is using this method to get the contrast ratio between color of any DOM element and it's background. Also it rates the contrast according to [WCAG-defined levels](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
 
 ### WebAIM
 
