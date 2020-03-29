@@ -7,7 +7,7 @@ featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
 
-**TL;DR**: If you want to set your text color to white or black dynamically according to the background color contrast using javascript, you can use the following code:
+**TL;DR**: If you want your text color to change to black or white dynamically according to background color contrast, you can use the following code:
 
 ```js
 function getRGB(c) {
@@ -42,15 +42,26 @@ function getTextColor(bgColor) {
 }
 ```
 
-## Longer explanation
+## See it in action
 
-To calculate contrast between two colors - in this case, foreground and background - we'll use the following contrast ratio formula, defined by [WCAG guidelines](https://www.w3.org/WAI/GL/wiki/Contrast_ratio): 
+Here is a pen showing how this works. Just click the button to get a random background color and text color will change accordingly.
+
+https://codepen.io/wunnle/pen/vYOVbqm
+
+## How this could be useful?
+
+On a project I'm working on, there is a page customized with brand colors of our customers. A component is using primary brand color as background color and there is a text on top of it. The problem is setting a good text color is *impossible* because whatever I pick it might not have enough contrast with background. So I had to find a way to change it according to background instead.
+
+
+## Math behind it
+
+To calculate contrast between two colors we'll use the following contrast ratio formula, defined by [WCAG guidelines](https://www.w3.org/WAI/GL/wiki/Contrast_ratio): 
 
 ```
 (L1 + 0.05) / (L2 + 0.05)
 ```
 
-Here L1 and L2 are *relative luminance* values of our foreground and background colors. [Relative luminance](https://en.wikipedia.org/wiki/Relative_luminance) measure of how bright a color is perceived to human eye[^1] and it has a formula of:
+Here L1 and L2 are *relative luminance* values of our two (foreground and background) colors. [Relative luminance](https://en.wikipedia.org/wiki/Relative_luminance) measure of how bright a color is perceived to human eye[^1] and it has a formula of:
 
 ```
 Y = 0.2126R + 0.7152G + 0.0722B
@@ -100,12 +111,20 @@ function getTextColor(bgColor) {
 }
 ```
 
-This method is used by [Chrome DevTools](https://developers.google.com/web/updates/2018/01/devtools#contrast) and [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/).
+## More examples out there
 
-Here is a pen showing this in action:
+### Google Chrome
 
+![devtools](./devtools.png)
 
-https://codepen.io/wunnle/pen/vYOVbqm
+Chrome DevTools is using this method to get the contrast ratio between any color of any DOM element and it's background. Also rates the contrast according to [WCAG-defined levels](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+
+### WebAIM
+
+![webaim contrast checker](./webaim.png)
+
+WebAIM has an [online contrast checker](https://webaim.org/resources/contrastchecker/) show contrast between two colors and WCAG levels.
+
 
 
 
