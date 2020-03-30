@@ -5,6 +5,7 @@ title: "Dynamic text color based on background"
 category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1244706955135942660"
 ---
 
 **TL;DR**: If you want your text color to change to black or white dynamically according to background color contrast, you can use the following code:
