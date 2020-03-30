@@ -57,6 +57,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800
+            }
+          },
           `gatsby-remark-reading-time`,
           `gatsby-remark-smartypants`,
           {
@@ -69,16 +75,30 @@ module.exports = {
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-external-links`,
           {
-            resolve: '@weknow/gatsby-remark-codepen',
+            resolve: 'gatsby-remark-codepen',
             options: {
               theme: 'dark',
-              height: 400
+              height: 500,
+              defaultTab: 'result'
             }
           },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               inlineCodeMarker: '÷'
+            }
+          },
+          {
+            resolve: `gatsby-remark-footnotes`,
+            options: {
+              footnoteBackRefPreviousElementDisplay: 'inline',
+              footnoteBackRefDisplay: 'inline',
+              footnoteBackRefInnerText: '^', // Defaults to: "↩"
+              //use if you want the Wikipedia style ^ link without an underline beneath it
+              footnoteBackRefAnchorStyle: `text-decoration: none;`,
+              //use "front" for Wikipedia style ^ links
+              footnoteBackRefInnerTextStartPosition: 'front',
+              useFootnoteMarkerText: false // Defaults to false
             }
           }
         ]

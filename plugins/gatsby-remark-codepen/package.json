@@ -1,0 +1,11 @@
+{
+  "name": "gatsby-remark-codepen",
+  "version": "0.1",
+  "keywords": ["remark", "codepen", "gatsby"],
+  "license": "MIT",
+  "author": "Sinan Aksay",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "unist-util-visit": "^1.1.3"
+  }
+}

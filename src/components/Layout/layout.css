@@ -852,3 +852,8 @@ pre[class*="language-"] ::selection {
 :not(pre) > code[class*="language-"]:after {
   display: none;
 }
+
+
+.gatsby-resp-image-wrapper {
+  margin-left: 0 !important;
+}
