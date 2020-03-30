@@ -48,20 +48,19 @@ Here is a pen showing how this works. Just click the button to get a random back
 
 https://codepen.io/wunnle/pen/vYOVbqm
 
-## How this could be useful?
+## How this could be useful
 
-On a project I'm working on, there is a page customized with brand colors of our customers. A component is using primary brand color as background color and there is a text on top of it. The problem is setting a good text color is *impossible* because whatever I pick it might not have enough contrast with background. So I had to find a way to change it according to background instead.
-
+On a project I'm working on, there is a page customized with brand colors of our customers. A component uses primary brand color as background color and places a text on top of it. The problem is setting a single good text color is *impossible*, because whatever I pick might just not have enough contrast with the background. So I came up with this solution to make the text work with any brand color.
 
 ## Math behind it
 
-To calculate contrast between two colors we'll use the following contrast ratio formula, defined by [WCAG guidelines](https://www.w3.org/WAI/GL/wiki/Contrast_ratio): 
+To calculate the contrast between two colors, we'll use the following contrast ratio formula, defined by [WCAG guidelines](https://www.w3.org/WAI/GL/wiki/Contrast_ratio): 
 
 ```
 (L1 + 0.05) / (L2 + 0.05)
 ```
 
-Here L1 and L2 are *relative luminance* values of our two (foreground and background) colors. [Relative luminance](https://en.wikipedia.org/wiki/Relative_luminance) measure of how bright a color is perceived to human eye[^1] and it has a formula of:
+Here L1 and L2 are *relative luminance* values of our two (foreground and background) colors. [Relative luminance](https://en.wikipedia.org/wiki/Relative_luminance) is a measure of how bright a color is perceived to the human eye[^1] and it has a formula of:
 
 ```
 Y = 0.2126R + 0.7152G + 0.0722B
@@ -90,7 +89,7 @@ function getLuminance(hexColor) {
 }
 ```
 
-Using relative luminance of each color, we can get the contrast between them:
+Using the relative luminance of each color, we can get the contrast between them:
 
 ```js
 function getContrast(f, b) {
@@ -100,7 +99,7 @@ function getContrast(f, b) {
 }
 ```
 
-Finally, we can calculate two sets of contrast - between our color and black or white - to determine which combination is more visible.
+Finally, we can calculate two sets of contrast - between our color, and black or white - to determine which combination is more visible.
 
 ```js
 function getTextColor(bgColor) {
@@ -117,13 +116,13 @@ function getTextColor(bgColor) {
 
 ![devtools](./devtools.png)
 
-Chrome DevTools is using this method to get the contrast ratio between color of any DOM element and it's background. Also, it rates the contrast according to [WCAG-defined levels](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+Chrome DevTools is using this method to get the contrast ratio between the color of any DOM element and it's background. Also, it rates the contrast based on [WCAG-defined levels](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
 
 ### WebAIM
 
 ![webaim contrast checker](./webaim.png)
 
-WebAIM has an [online contrast checker](https://webaim.org/resources/contrastchecker/) that shows contrast between two colors and WCAG levels.
+WebAIM has an [online contrast checker](https://webaim.org/resources/contrastchecker/) that shows contrast between two colors and whether it passes minimum WCAG levels.
 
 
 
