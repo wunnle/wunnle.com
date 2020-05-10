@@ -10,6 +10,7 @@
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-catch-links": "^2.1.24",
     "gatsby-plugin-extract-image-colors": "^0.0.14",
+    "gatsby-plugin-feed": "^2.5.1",
     "gatsby-plugin-google-analytics": "^2.1.34",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
