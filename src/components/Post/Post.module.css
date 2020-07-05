@@ -48,6 +48,11 @@
   border-bottom: 1px solid #036bde;
 }
 
+.content h2 a:active, .content h2 a:hover, .content h3 a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
 
 .content strong {
   font-weight: 600;
