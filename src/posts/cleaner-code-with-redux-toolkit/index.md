@@ -7,11 +7,11 @@ featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
 
-**Redux Toolkit** (RTK) is the [recommended toolset by Redux Team](https://redux.js.org/style-guide/style-guide#use-redux-toolkit-for-writing-redux-logic) for writing Redux. RTK provides simple utility functions to write cleaner, easier and reusable code. Out of the box, RTK comes with useful Redux packages like Redux Thunk and Immer.
+**Redux Toolkit** (RTK for short) is the [recommended toolset by Redux Team](https://redux.js.org/style-guide/style-guide#use-redux-toolkit-for-writing-redux-logic) for writing Redux code. RTK provides simple utility functions to write cleaner, easier and reusable code. Out of the box, RTK comes with useful Redux packages like Redux Thunk and Immer.
 
 **In this article, I'll walk you through how to implement Redux Toolkit on a React app that *already* uses Redux.** I'll use an app called *ColorsApp*, it's a small project I created during a livestream earlier.[^1] This article assumes you have an understanding of both React and Redux.
 
-In case you prefer see the code on your editor, I've created two branches on ColorsApp repo, so you can compare the code from before and after the RTK implementation. See [pre-redux-toolkit](https://github.com/wunnle/colorsApp/tree/pre-redux-toolkit) and [redux-toolkit-implementation](https://github.com/wunnle/colorsApp/tree/feature/redux-toolkit-implementation) on GitHub.
+In case you prefer to read the code on your editor, you can clone [pre-redux-toolkit](https://github.com/wunnle/colorsApp/tree/pre-redux-toolkit) and [redux-toolkit-implementation](https://github.com/wunnle/colorsApp/tree/feature/redux-toolkit-implementation) branches from GitHub and compare the code.
 
 Let's get to it.
 
@@ -51,7 +51,9 @@ const store = createStore(rootReducer, undefined, composedEnhancers)
 export default store
 ```
 
-RTK provides a function called `configureStore` to create the store in cleaner way and also add some useful tools to it in the by default. As you can see I'm using Redux Devtools Extension and  Redux Thunk with my store. Lets create the store RTK way:
+ I'm using Redux Devtools Extension and Redux Thunk middleware with my store.
+
+RTK provides a function called `configureStore` to create a Redux store. Lets create the store RTK way:
 
 ```js
 // new store.js
@@ -64,12 +66,12 @@ const store = configureStore({ reducer: rootReducer })
 export default store
 ```
 
-Much cleaner, huh? `configureStore` has both **Redux Thunk** and **Redux Devtools Extension** by default, so we don't need to implement them.
+Much cleaner, huh? `configureStore` has both **Redux Thunk** and **Redux Devtools Extension** by default, so there is no need to implement them.
 
 
 ## Meet slices 🍕
 
-Lets look at the action and reducer I used for login logic.
+Let's look at the login action and reducer.
 
 ```js
 // actions/login.js
@@ -109,7 +111,7 @@ const loginReducer = (state = defaultState, action) => {
 export default loginReducer
 ```
 
-While using Redux, we ***slice*** the application state to small chunks and create a reducer for each slice, then merge all with *combineReducers*. RTK's `loginSlice` function makes creation of these slices a lot easier:
+While using Redux, we ***slice*** the application state to small chunks and create a reducer for each slice, then merge all reducers with *combineReducers*. RTK's `loginSlice` function makes creation of a slice a lot easier:
 
 ```js
 // Login/loginSlice.js
@@ -136,7 +138,7 @@ const loginSlice = createSlice({
 export default loginSlice
 ```
 
-`createSlice()` accepts a single object with `name`, `initialState` and `reducers` properties. We pass it a name and initial state using first two. `reducers` is the equivalent of the switch statement we're using on a traditional reducer. It's an object with keys as action types (more to this later) and values as the reducer logic.
+`createSlice()` accepts a single object with `name`, `initialState` and `reducers` keys. We pass it a name and initial state using first two. `reducers` is the equivalent of the switch statement we're using on a traditional reducer. It's an object with keys as action types (more to this later) and values as the reducer logic.
 
 To pass a slice to combineReducers, we use it's `reducer` property.
 
@@ -149,7 +151,7 @@ export default combineReducers({
 })
 ```
 
-As you probably noticed, loginSlice lives inside the /Login directory, where the relevant component is. Structuring files by feature and placing all relevant files under a feature folder is [recommended by Redux Team](https://redux.js.org/style-guide/style-guide#structure-files-as-feature-folders-or-ducks). 
+As you probably noticed, `loginSlice` lives inside the /Login directory, where the relevant component is. Structuring files by feature and placing all relevant files under a feature folder is [recommended by Redux Team](https://redux.js.org/style-guide/style-guide#structure-files-as-feature-folders-or-ducks). 
 
 But wait, where do we define action creators with this approach? 🤔
 
@@ -231,7 +233,8 @@ The cool thing about `createAsyncThunk()` is, it has started, success and failed
 * Then if the promise resolves it'll dispatch `colorList/fetchColorList/fulfilled`
 * If promise is rejected, instead it'll dispatch  `colorList/fetchColorList/rejected`
 
-It's a different naming convention then I used, but still the same functionality.
+
+Even if it uses a different naming convertion for action types, the options are same with my original code.
 
 We'll handle these actions in our **slice** like this:
 
@@ -262,10 +265,10 @@ const colorListSlice = createSlice({
 
 Notice this time we used `extraReducers` instead of `reducers`. `extraReducers` is for other actions then our slice generated. We can still modify our state thanks to Immer. 
 
-All done! As you can see by using **Redux Toolkit**, we didn't only get rid of lots of boilerplate but also we got automatically generated action types with better naming, better file structure and we don't need to worry about mutating the state in reducers. 
+All done! As you can see by using **Redux Toolkit**, we didn't only get rid of lots of boilerplate, but also we got automatically generated action types with better naming, got a better file structure and we don't need to worry about mutating the state in reducers anymore.
 
 Happy coding! 🍕
 
 [^1]: The livestream was about creating a React app using Redux and React Router. You can find it [here](https://www.youtube.com/watch?v=CZm0mQx4pBw). It's in Turkish though.
 
-[^2]: Using domain/eventName format for action types is [another recommendation by Redux](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname).
+[^2]: Using 'domain/eventName' format for action types is [another recommendation by Redux](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname).
