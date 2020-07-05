@@ -1,10 +1,10 @@
 ---
 path: "/cleaner-code-with-redux-toolkit"
-date: 2020-07-05
+date: 2020-07-06
 title: "Modern Redux with Redux Toolkit"
 category: "redux"
-featuredImg: "./switch-1.jpg"
-socialImg: "./switch-social.jpg"
+featuredImg: "./post.jpg"
+socialImg: "./social.jpg"
 ---
 
 **Redux Toolkit** (RTK) is the [recommended toolset by Redux Team](https://redux.js.org/style-guide/style-guide#use-redux-toolkit-for-writing-redux-logic) for writing Redux. RTK provides simple utility functions to write cleaner, easier and reusable code. Out of the box, RTK comes with useful Redux packages like Redux Thunk and Immer.
