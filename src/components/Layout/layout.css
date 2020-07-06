@@ -677,7 +677,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #7c7c7c;
+  color: rgba(255, 255, 255, 0.55) !important;
 }
 
 .token.punctuation {
@@ -840,13 +840,16 @@ pre[class*="language-"] ::selection {
 :not(pre) > code[class*="language-"] {
   border-radius: 0.3em;
   white-space: normal;
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(0,0,0,.05);
   border-radius: 3px;
   font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
   padding: .2em 3px;
   color: #27333a;
   font-size: 18px;
   text-shadow: none;
+  position: relative;
+  top: -1px;
+  margin: 0 2px;
 }
 
 :not(pre) > code[class*="language-"]:after {
