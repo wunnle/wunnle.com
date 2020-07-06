@@ -1,5 +1,5 @@
 ---
-path: "/cleaner-code-with-redux-toolkit"
+path: "/modern-redux-with-redux-toolkit"
 date: 2020-07-06
 title: "Modern Redux with Redux Toolkit"
 category: "redux"
