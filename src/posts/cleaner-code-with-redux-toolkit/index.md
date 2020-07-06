@@ -9,7 +9,7 @@ socialImg: "./social.jpg"
 
 **Redux Toolkit** (RTK for short) is the [recommended toolset by Redux Team](https://redux.js.org/style-guide/style-guide#use-redux-toolkit-for-writing-redux-logic) for writing Redux code. RTK provides simple utility functions to write cleaner, easier and reusable code. Out of the box, RTK comes with useful Redux packages like Redux Thunk and Immer.
 
-**In this article, I'll walk you through how to implement Redux Toolkit on a React app that *already* uses Redux.** I'll use an app called *ColorsApp*, it's a small project I created during a live  stream earlier.[^1] This article assumes you have an understanding of both React and Redux.
+**In this article, I'll walk you through how to implement Redux Toolkit on a React app that *already* uses Redux.** I'll use an app called *ColorsApp*, it's a small project I created during a live  stream earlier[^1]. This article assumes you have an understanding of both React and Redux.
 
 In case you prefer to read the code on your editor, you can clone [pre-redux-toolkit](https://github.com/wunnle/colorsApp/tree/pre-redux-toolkit) and [redux-toolkit-implementation](https://github.com/wunnle/colorsApp/tree/feature/redux-toolkit-implementation) branches from GitHub and compare the code.
 
@@ -32,7 +32,7 @@ For new apps, RTK recommends using [their official template](https://github.com/
 
 ## configureStore()
 
-My original code to create the Redux store is looking like this:
+My original code to create the Redux store looks like this:
 
 ```js
 // old store.js
@@ -53,7 +53,7 @@ export default store
 
  I'm using Redux Devtools Extension and Redux Thunk middleware with my store.
 
-RTK provides a function called `configureStore` to create a Redux store. Let's create the store RTK way:
+RTK provides a function called `configureStore` to create a Redux store. Let's create the store the RTK way:
 
 ```js
 // new store.js
@@ -111,7 +111,7 @@ const loginReducer = (state = defaultState, action) => {
 export default loginReducer
 ```
 
-While using Redux, we ***slice*** the application state to small chunks and create a reducer for each slice, then merge all reducers with *combineReducers*. RTK's `loginSlice` function makes the creation of a slice a lot easier:
+While using Redux, we ***slice*** the application state to small chunks and create a reducer for each slice, then merge all reducers with `combineReducers`. RTK's `loginSlice` function makes the creation of a slice a lot easier:
 
 ```js
 // Login/loginSlice.js
@@ -138,7 +138,7 @@ const loginSlice = createSlice({
 export default loginSlice
 ```
 
-`createSlice()` accepts a single object with `name`, `initialState` and `reducers` keys. We pass it a name and initial state using the first two. `reducers` is the equivalent of the switch statement we're using on a traditional reducer. It's an object with keys as action types (more to this later) and values as the reducer logic.
+`createSlice()` accepts a single object with `name`, `initialState` and `reducers` keys. `reducers` here is the equivalent of the switch statement we would use on a traditional reducer. It's an object with action types as keys (more on this later) and reducer logic as values.
 
 To pass a slice to combineReducers, we use its `reducer` property.
 
@@ -163,12 +163,12 @@ import loginSlice from './loginSlice'
 dispatch(loginSlice.actions.userLoggedIn(email))
 ```
 
-...and `email` passed to `userLoggedIn` can be accessed `action.payload` in the reducer. How cool is that? Action types are generated using the slice name and the key in the reducers object. So for this example, you'll see `login/userLoggedIn` in your Dev Tools. [^2]
+...and `email` passed to `userLoggedIn` can be accessed with `action.payload` in the reducer. How cool is that? Action types are generated using the slice name and the key in the reducers object. So for this example, you'll see `login/userLoggedIn` in your Dev Tools[^2]. 
 
 
 ## Mutating the state
 
-RTK uses a package called [Immer](https://github.com/immerjs/immer) which allows you to write mutations and still have an immutable state! So as an alternative to returning a new state, we can also do this:
+RTK uses a package called [Immer](https://github.com/immerjs/immer) which allows you to write mutations and still have an immutable state! So as an alternative to returning copy of the state, we can also do this:
 
 ```js
 
@@ -227,10 +227,10 @@ export const fetchColorList = createAsyncThunk('colorList/fetchColorList', async
 })
 ```
 
-The cool thing about `createAsyncThunk()` is, it has started, success and failed action creators built-in. So when you dispatch `fetchColorList` action:
+The cool thing about `createAsyncThunk()` is, it has "started", "success" and "failed" action creators built-in. So when you dispatch `fetchColorList` action:
 
 * It'll dispatch `colorList/fetchColorList/pending`
-* Then if the promise resolves it'll dispatch `colorList/fetchColorList/fulfilled`
+* Then if the promise resolves, it'll dispatch `colorList/fetchColorList/fulfilled`
 * If promise is rejected, instead it'll dispatch  `colorList/fetchColorList/rejected`
 
 
@@ -263,7 +263,7 @@ const colorListSlice = createSlice({
 })
 ```
 
-Notice this time we used `extraReducers` instead of `reducers`. `extraReducers` is for other actions then our slice generated. We can still modify our state thanks to Immer. 
+Notice this time we used `extraReducers` instead of `reducers`. `extraReducers` is for the actions not generated by our slice. We can still modify our state thanks to Immer. 
 
 All done! As you can see by using **Redux Toolkit**, we didn't only get rid of lots of boilerplate, but also we got automatically generated action types with better naming, got a better file structure and we don't need to worry about mutating the state in reducers anymore.
 
