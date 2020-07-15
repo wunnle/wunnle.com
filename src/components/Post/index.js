@@ -1,5 +1,6 @@
 import React from 'react'
 
+import EmailSubscription from '../EmailSubscription'
 import MeCard from '../MeCard'
 import NextPostCard from '../NextPostCard'
 import SEO from '../Seo'
@@ -54,6 +55,7 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
           Edit on GitHub
         </a>
       </div>
+      <EmailSubscription />
       <div className={styles.recommendedPosts}>
         <NextPostCard post={prevPost} />
         <NextPostCard post={nextPost} />
