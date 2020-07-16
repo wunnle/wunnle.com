@@ -1,0 +1,125 @@
+.subscribeForm {
+  background: #002240;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  box-sizing: border-box ;
+  border-radius: 6px;
+}
+
+.subscribeForm label {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+.info {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.confirmInfo {
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+  margin-bottom: 10px;
+}
+
+.mailIcon {
+  width: 100px;
+  height: auto;
+}
+
+.infoTitles {
+  padding-left: 40px;
+}
+
+.preTitle {
+  font-size: 19px;
+  opacity: 0.8;
+}
+
+.title {
+  margin-bottom: 0;
+  font-size: 34px;
+}
+
+.smallerTitle {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 600px) {
+
+  .subscribeForm {
+    padding: 40px 20px;
+  }
+
+  .infoTitles {
+    padding-left: 25px;
+  }
+
+  .title {
+    font-size: 27px;
+  }
+
+  .title br{
+    display: none;
+  }
+}
+
+.formInner {
+  width: 420px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.subscribeForm input {
+  border: none;
+  background: white;
+  border-radius: 4px;
+  height: 46px;
+  padding: 15px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.subscribeForm input:focus {
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.14);
+} 
+
+.subscribeForm input + input, .subscribeForm input + label, .subscribeForm label + input {
+  margin-top: 16px;
+}
+
+.subscribeForm button {
+  height: 46px;
+  width: 100%;
+  background: #7d59d5;
+  font-weight: 600;
+  color: white;
+  margin-top: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscribeForm button:hover, .subscribeForm button:active  {
+  background: #8866dd;
+} 
+
+.subscribeForm button:active {
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.14);
+}
+
+.fineCopy {
+  font-size: 13px;
+  opacity: 0.9;
+  color: white;
+  margin-top: 5px;
+}
