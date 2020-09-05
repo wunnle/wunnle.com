@@ -38,7 +38,7 @@ Let's create them.
 
 Create a folder names "packages" and under it create another folder for our first package, **package-a**. `cd` to this folder and run `yarn init` to initialize our package. When prompted, enter "package-a" to the name. Also, create an `index.js` under package-a.
 
-Now do the same thing to create another package under /packages/, but this time call it **package-b**. At this point your project should have a structure like this:
+Now do the same thing to create another package under `/packages/`, but this time call it **package-b**. At this point your project should have a structure like this:
 
 ```
 package.json    
@@ -51,7 +51,7 @@ packages/
       |-- package.json  
 ```
 
-Now add the following code to package-a/index.js:
+Now add the following code to `package-a/index.js`:
 
 ```js
 // package-a/index.js
@@ -71,7 +71,7 @@ yarn workspace package-a add dayjs
 ```
 
 
-Now ket's switch to **package-b**. What I want to do here is, import the `getDateNameOfToday()` as a module as use it in `package-b` code. To do that first go to package.json under /package-b and update it like this:
+Now ket's switch to `package-b`. What I want to do here is, import the `getDateNameOfToday()` as a module as use it in `package-b` code. To do that first go to `package.json` under `/package-b` and update it like this:
 
 ```js
 {
