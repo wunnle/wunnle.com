@@ -838,18 +838,20 @@ pre[class*="language-"] ::selection {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  border-radius: 0.3em;
-  white-space: normal;
-  background-color: rgba(0,0,0,.05);
-  border-radius: 3px;
   font-family: SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;
-  padding: .2em 3px;
-  color: #27333a;
-  font-size: 18px;
   text-shadow: none;
   position: relative;
   top: -1px;
-  margin: 0 2px;
+  margin: 0 3px;
+  padding: 2px 4px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #ccc;
+  white-space: nowrap;
+  font-size: 0.75em;
+  font-weight: 500;
+  color: #333;
+  background: white;
+  display: inline-block;
 }
 
 :not(pre) > code[class*="language-"]:after {
