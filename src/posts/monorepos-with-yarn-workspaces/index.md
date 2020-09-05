@@ -70,10 +70,11 @@ Here we define this function that returns current day of the week and export it.
 yarn workspace package-a add dayjs
 ```
 
+You can use this `yarn workspace <workspaceName> <command>` syntax to do anything you normally do with yarn, like remove, build, start etc.
 
-Now ket's switch to `package-b`. What I want to do here is, import the `getDateNameOfToday()` as a module as use it in `package-b` code. To do that first go to `package.json` under `/package-b` and update it like this:
+Now let's switch to `package-b`. What I want to do here is, import the `getDateNameOfToday()` as a module as use it in `package-b` code. To do that first go to `package.json` of `package-b` and update it like this:
 
-```js
+```json
 {
   "name": "package-b",
   "version": "1.0.0",
@@ -85,9 +86,9 @@ Now ket's switch to `package-b`. What I want to do here is, import the `getDateN
 }
 ```
 
-Adding `package-a` as a dependency will let us import modules from it. To install dependencies, run `yarn` from the root folder. 
+Adding `package-a` as a dependency will let us import modules from it. To install dependencies, just run `yarn` from the root folder. 
 
-Now we can import our function in package-b:
+Now we can import our function in `package-b`:
 
 ```js
 const { getDateNameOfToday } = require('package-a');
@@ -95,7 +96,12 @@ const { getDateNameOfToday } = require('package-a');
 console.log(`today is ${getDateNameOfToday()}!`);
 ```
 
-If you run `node packages/package-b/index.js` you'll the function is working even if package-b doesn't have dayjs dependency.
+If you run `package-b/index.js` using node you'll see the function is working even if `package-b` doesn't explicitly have `dayjs` dependency.
+
+```bash
+$ node packages/package-b/index.js
+today is Saturday!
+```
 
 
 
