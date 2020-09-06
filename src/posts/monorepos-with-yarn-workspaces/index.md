@@ -7,21 +7,21 @@ featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
 
-For a codebase with interdependent projects, a monorepo might be an efficient way of organization to make sharing code between the projects really easy.
+For a codebase with interdependent projects, a monorepo might be an efficient way of organization, which makes sharing code between projects really easy.
 
-A ***monorepo*** is a single repository containing multiple packages. Imagine a landing page and an admin panel as separate projects with some common components. Instead of creating two repositories for them, we can make these projects live under a single repo, and projects can share code among them.
+A ***monorepo***  is a single repository containing multiple packages. Imagine a landing page and an admin panel as separate projects with some mutual components. Instead of creating two different repositories for them, we can make these projects live under a single repo, and projects can share code among them.
 
-There are different tools to create and manage monorepos. In this article, I'll explain how to achieve those using yarn.
+There are various tools to create and manage monorepos. In this article, I’ll explain how to achieve those using Yarn.
 
 ## Yarn workspaces  
 
-[Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) is a feature of Yarn that allows us to have multiple packages (which are called workspaces) that can require modules from one another. All workspaces still have their individual list of dependencies and independent versions, , all dependencies of all these projects get installed with a single `yarn install` command from the root. 
+[Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) is a feature of Yarn that allows us to have multiple packages (which are called workspaces) that can require modules from one another. All workspaces still get to keep their individual list of dependencies and independent versions, however dependencies of all these projects get installed with a single `yarn install` command from the root.
 
 ## Show me the code  
 
-I'll walk you through how to set up a project using Yarn workspaces with the least code as possible. That means no webpack and babel, so I'll stick with good ol' `require` and `module.exports`. I also have [the complete example on GitHub](https://github.com/wunnle/yarn-workspaces-example) if you prefer to skip ahead.
+I’ll walk you through how to set up a project using Yarn workspaces with as little code as possible. That means no webpack and babel, so I’ll stick with good ol’ `require` and `module.exports`. I also have [the complete example on GitHub](https://github.com/wunnle/yarn-workspaces-example) if you prefer to skip ahead.
 
-First of all, let's create a package.json file on the root folder of our project and add the following code:
+First of all, let’s create a "package.json" file on the root folder of our project with the following code in it:
 
 ```js
 {
@@ -32,13 +32,13 @@ First of all, let's create a package.json file on the root folder of our project
 }
 ```
   
-Here, we are setting `private` to `true` to prevent the root package to be published accidentally, this makes sense since workspace root is not a *real* package. By setting the value of workspaces `["./packages/*"]` we are telling yarn that any folder under `/packages/` will be a workspace.   
+Here, you are setting `private` to `true` to prevent the root package to be accidentally published, and this makes sense since workspace root is not a real package. Setting `workspaces` to `["./packages/*"]` tells Yarn to use any folder under `/packages/` as a workspace.
 
-Let's create them.
+Now let’s create those workspaces.
 
-Create a folder names "packages" and under it create another folder for our first package, **package-a**. `cd` to this folder and run `yarn init` to initialize our package. When prompted, enter "package-a" to the name. Also, create an `index.js` under package-a.
+Create a folder named "packages" and under it, create another one for our first package, **package-a**. `cd` to this folder and run `yarn init` to initialize our package. When prompted, enter "package-a" as the name. Also, create an `index.js` under package-a.
 
-Now do the same thing to create another package under `/packages/`, but this time call it **package-b**. At this point your project should have a structure like this:
+Now do the same thing to create another package under `/packages/`, except this time call it **package-b**. At this point your project structure should like this:
 
 ```
 package.json    
@@ -51,7 +51,7 @@ packages/
       |-- package.json  
 ```
 
-Now add the following code to `package-a/index.js`:
+Next, add the following code to `package-a/index.js`:
 
 ```js
 // package-a/index.js
@@ -64,15 +64,15 @@ function getDateNameOfToday() {
 module.exports = { getDateNameOfToday }
 ```
 
-Here we define this function that returns current day of the week and export it. To make this function work, we need `dayjs` dependency. To add this dependency to `package-a` workspace, use the following command:
+This function returns the current day of the week. To make this function work, you'll need `dayjs` dependency. Use the following command to add this dependency to `package-a` workspace:
 
 ```bash
 yarn workspace package-a add dayjs
 ```
 
-You can use this `yarn workspace <workspaceName> <command>` syntax to do anything you normally do with yarn, like remove, build, start etc.
+You can use this `yarn workspace <workspaceName> <command>` syntax to do anything you’d normally do with Yarn; like `remove`, `build`, `start` etc.
 
-Now let's switch to `package-b`. What I want to do here is, import the `getDateNameOfToday()` as a module as use it in `package-b` code. To do that first go to `package.json` of `package-b` and update it like this:
+Now let's switch to `package-b`. What you want to do here is, to import `getDateNameOfToday()` as a module to use it in `package-b` code. To do that, start by editing `package.json` of `package-b` like this:
 
 ```json
 {
@@ -86,9 +86,9 @@ Now let's switch to `package-b`. What I want to do here is, import the `getDateN
 }
 ```
 
-Adding `package-a` as a dependency will let us import modules from it. To install dependencies, just run `yarn` from the root folder. 
+Having added `package-a` as a dependency will let us import modules from it. To install dependencies, just run `yarn` from the root folder. 
 
-Now we can import our function in `package-b`:
+Now you can import that function in `package-b`:
 
 ```js
 const { getDateNameOfToday } = require('package-a');
@@ -96,13 +96,12 @@ const { getDateNameOfToday } = require('package-a');
 console.log(`today is ${getDateNameOfToday()}!`);
 ```
 
-If you run `package-b/index.js` using node you'll see the function is working even if `package-b` doesn't explicitly have `dayjs` dependency.
+If you run `package-b/index.js` using node, you’ll see the proper output even if `package-b` doesn't explicitly have `dayjs` dependency.
 
 ```bash
 $ node packages/package-b/index.js
 today is Saturday!
 ```
-
 
 
 ## Bonus tip: Shared devDependencies
