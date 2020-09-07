@@ -64,13 +64,13 @@ function getDateNameOfToday() {
 module.exports = { getDateNameOfToday }
 ```
 
-This function returns the current day of the week. To make this function work, you'll need `dayjs` dependency. Use the following command to add this dependency to `package-a` workspace:
+This function returns the current day of the week. To make it work, you'll need `dayjs` dependency. Use the following command to add this dependency to `package-a` workspace:
 
 ```bash
 yarn workspace package-a add dayjs
 ```
 
-You can use this `yarn workspace <workspaceName> <command>` syntax to do anything you’d normally do with Yarn; like `remove`, `build`, `start` etc.
+You can use this `yarn workspace <workspaceName> <command>` syntax to do anything you’d normally do with Yarn; like `add`, `remove`, `build` etc.
 
 Now let's switch to `package-b`. What you want to do here is, to import `getDateNameOfToday()` as a module to use it in `package-b` code. To do that, start by editing `package.json` of `package-b` like this:
 
@@ -86,7 +86,7 @@ Now let's switch to `package-b`. What you want to do here is, to import `getDate
 }
 ```
 
-Having added `package-a` as a dependency will let us import modules from it. To install dependencies, just run `yarn` from the root folder. 
+Having `package-a` as a dependency will let us import modules from it. To install dependencies, just run `yarn` from the root folder. 
 
 Now you can import that function in `package-b`:
 
