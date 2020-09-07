@@ -7,7 +7,7 @@ featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
 
-For a codebase with interdependent projects, a monorepo might be an efficient way of organization, which makes sharing code between projects really easy.
+For a codebase with interdependent projects, a monorepo can be an efficient way of organization, which makes sharing code between projects really easy.
 
 A ***monorepo***  is a single repository containing multiple packages. Imagine a landing page and an admin panel as separate projects with some mutual components. Instead of creating two different repositories for them, we can make these projects live under a single repo, and projects can share code among them.
 
