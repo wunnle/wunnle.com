@@ -2,12 +2,12 @@
 path: "/monorepos-with-yarn-workspaces"
 date: 2020-09-06
 title: "Monorepos with Yarn workspaces"
-category: "redux"
+category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
 
-For a codebase with interdependent projects, a monorepo can be an efficient way of organization, which makes sharing code between projects really easy.
+For a codebase with interdependent projects, a monorepo can be an efficient way of organization which makes sharing code between projects really easy.
 
 A ***monorepo***  is a single repository containing multiple packages. Imagine a landing page and an admin panel as separate projects with some mutual components. Instead of creating two different repositories for them, we can make these projects live under a single repo, and projects can share code among them.
 
@@ -38,7 +38,7 @@ Now let’s create those workspaces.
 
 Create a folder named "packages" and under it, create another one for our first package, **package-a**. `cd` to this folder and run `yarn init` to initialize our package. When prompted, enter "package-a" as the name. Also, create an `index.js` under package-a.
 
-Now do the same thing to create another package under `/packages/`, except this time call it **package-b**. At this point your project structure should like this:
+Now do the same thing to create another package under `/packages/`, except this time call it **package-b**. At this point your project structure should look like this:
 
 ```
 package.json    
@@ -96,7 +96,7 @@ const { getDateNameOfToday } = require('package-a');
 console.log(`today is ${getDateNameOfToday()}!`);
 ```
 
-If you run `package-b/index.js` using node, you’ll see the proper output even if `package-b` doesn't explicitly have `dayjs` dependency.
+If you run `package-b/index.js` using node, you’ll see the proper output even if `package-b` doesn't explicitly have the `dayjs` dependency.
 
 ```bash
 $ node packages/package-b/index.js
