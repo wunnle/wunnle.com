@@ -96,7 +96,7 @@ const { getDateNameOfToday } = require('package-a');
 console.log(`today is ${getDateNameOfToday()}!`);
 ```
 
-If you run `package-b/index.js` using node, you’ll see the proper output even if `package-b` doesn't explicitly have the `dayjs` dependency.
+If you run `package-b/index.js` using node, you’ll see the proper output even if `package-b` doesn't explicitly have the `dayjs` dependency. 🎈
 
 ```bash
 $ node packages/package-b/index.js
