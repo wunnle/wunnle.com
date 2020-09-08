@@ -1,6 +1,6 @@
 ---
 path: "/monorepos-with-yarn-workspaces"
-date: 2020-09-06
+date: 2020-09-09
 title: "Monorepos with Yarn workspaces"
 category: "javascript"
 featuredImg: "./post.jpg"
