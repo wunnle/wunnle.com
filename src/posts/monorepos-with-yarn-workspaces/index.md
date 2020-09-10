@@ -5,6 +5,7 @@ title: "Monorepos with Yarn workspaces"
 category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1304003514033672196"
 ---
 
 For a codebase with interdependent projects, a monorepo can be an efficient way of organization which makes sharing code between projects really easy.
