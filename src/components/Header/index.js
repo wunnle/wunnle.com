@@ -7,16 +7,16 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerInner}>
-        <a href="/">
+        <a href="/" className="h-card" rel="me">
           <img className={styles.logo} src={logo} width="150" alt="wunnle logo" />
         </a>
         <nav className={styles.nav}>
           <a href="https://wunnle.dev/">Portfolio</a>
           <a
-            className={styles.contactLink}
+            className={[styles.contactLink, u - email].join(' ')}
             href="mailto:me@wunnle.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer me"
           >
             Contact
           </a>
