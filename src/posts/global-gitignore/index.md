@@ -5,6 +5,7 @@ title: "Global .gitignore"
 category: "javascript"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
+tweet: "https://twitter.com/wunnle/status/1341702262180212738"
 ---
 
 Instead of adding platform-specific files like `.DS_Store` to `.gitignore` file of every single project, you can just create a global `.gitignore` file.
