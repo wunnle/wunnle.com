@@ -2,7 +2,7 @@
 path: "/global-gitignore"
 date: 2020-12-24
 title: "Global .gitignore"
-category: "javascript"
+category: "git"
 featuredImg: "./post.jpg"
 socialImg: "./social.jpg"
 ---
