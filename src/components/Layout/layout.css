@@ -804,7 +804,7 @@ pre[class*="language-"] {
   background: #002240;
   border-radius: 6px;
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.05);
-  margin: 40px 0;
+  margin: 20px 0 40px;
   font-size: 15px;
 }
 
