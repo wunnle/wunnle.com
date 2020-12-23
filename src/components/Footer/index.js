@@ -17,19 +17,23 @@ const Footer = props => (
           <li>
             <a
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
               href="https://twitter.com/wunnle"
             >
               <img src={twitterLogo} alt="wunnle on twitter" />
             </a>
             <a
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
               href="https://dribbble.com/wunnle"
             >
               <img src={dribbbleLogo} alt="wunnle on dribbble" />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/wunnle">
+            <a
+              target="_blank"
+              rel="noopener noreferrer me"
+              href="https://github.com/wunnle"
+            >
               <img src={githubLogo} alt="wunnle on github" />
             </a>
           </li>
