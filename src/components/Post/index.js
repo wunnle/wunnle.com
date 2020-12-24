@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 import EmailSubscription from '../EmailSubscription'
@@ -9,9 +10,25 @@ import styles from './Post.module.css'
 import TwitterIcon from './twitter.inline.svg'
 
 const Post = ({ post, prevPost, nextPost, siteData }) => {
+  const {
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
+      }
+    `
+  )
+
   const { frontmatter, fileAbsolutePath, excerpt } = post
 
-  const { title, date, category, socialImg, tweet } = frontmatter
+  const { title, date, category, socialImg, tweet, path } = frontmatter
 
   const imgUrl = socialImg.childImageSharp.sizes.src
 
@@ -23,7 +40,10 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
     githubRepoUrl + '/edit/master/' + fileAbsolutePath.match(/src\/posts\/.*/i)[0]
 
   return (
-    <article className={[styles.post, 'h-card'].join(' ')}>
+    <article className={[styles.post, 'h-card', 'h-entry'].join(' ')}>
+      <a class="u-url" style={{ display: 'none' }} href={`${siteUrl}${path}`}>
+        Link to the post
+      </a>
       <p class="p-summary e-content" style={{ display: 'none' }}>
         {excerpt}
       </p>
