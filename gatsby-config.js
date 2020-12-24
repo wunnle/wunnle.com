@@ -71,6 +71,20 @@ module.exports = {
         trackingId: 'UA-136327122-1'
       }
     },
+    {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: 'wunnle.com',
+        identity: {
+          github: 'wunnle',
+          twitter: 'wunnle'
+        },
+        mentions: true,
+        pingbacks: true,
+        domain: 'wunnle.com',
+        token: process.env.WEBMENTIONS_TOKEN
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
