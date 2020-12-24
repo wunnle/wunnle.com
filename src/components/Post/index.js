@@ -23,12 +23,15 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
     githubRepoUrl + '/edit/master/' + fileAbsolutePath.match(/src\/posts\/.*/i)[0]
 
   return (
-    <div className={styles.post}>
+    <article className={[styles.post, 'h-card'].join(' ')}>
+      <p class="p-summary e-content" style={{ display: 'none' }}>
+        {excerpt}
+      </p>
       <SEO title={title} image={imgUrl} description={excerpt} />
       <MeCard date={date} />
       <div className={styles.inner}>
         <hgroup>
-          <h1>{title}</h1>
+          <h1 className="p-name">{title}</h1>
           <div className={styles.details}>
             <span>{category}</span>
             <span>{post.fields.readingTime.text}</span>
@@ -60,7 +63,7 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
         <NextPostCard post={prevPost} />
         <NextPostCard post={nextPost} />
       </div>
-    </div>
+    </article>
   )
 }
 
