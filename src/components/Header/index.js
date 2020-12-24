@@ -13,7 +13,7 @@ const Header = () => {
         <nav className={styles.nav}>
           <a href="https://wunnle.dev/">Portfolio</a>
           <a
-            className={[styles.contactLink, u - email].join(' ')}
+            className={[styles.contactLink, 'u-email'].join(' ')}
             href="mailto:me@wunnle.com"
             target="_blank"
             rel="noopener noreferrer me"
