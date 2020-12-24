@@ -9,7 +9,9 @@ const MeCard = ({ date }) => (
       <img src={img} className="u-photo" alt="Sinan Aksay smiling with cool shades" />
     </div>
     <div className={styles.info}>
-      <p className={styles.name}>Sinan Aksay</p>
+      <p className={[styles.name, 'p-author', 'h-card'].join(' ')} rel="author">
+        Sinan Aksay
+      </p>
       <p className={styles.date}>on {date}</p>
     </div>
   </div>
