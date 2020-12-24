@@ -39,6 +39,16 @@ const Footer = props => (
           </li>
         </ul>
       </nav>
+      <link
+        rel="webmention"
+        href="https://webmention.io/wunnle.com/webmention"
+        style={{ display: 'none' }}
+      />
+      <link
+        rel="pingback"
+        href="https://webmention.io/wunnle.com/xmlrpc"
+        style={{ display: 'none' }}
+      />
     </div>
   </footer>
 )
