@@ -28,7 +28,7 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
 
   const { frontmatter, fileAbsolutePath, excerpt } = post
 
-  const { title, date, category, socialImg, tweet, path } = frontmatter
+  const { title, date, category, socialImg, tweet, path, isoDate } = frontmatter
 
   const imgUrl = socialImg.childImageSharp.sizes.src
 
@@ -49,11 +49,14 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
       </p>
       <SEO title={title} image={imgUrl} description={excerpt} />
       <MeCard date={date} />
+      <time class="dt-published" datetime={isoDate} style={{ display: 'none' }}>
+        {isoDate}
+      </time>
       <div className={styles.inner}>
         <hgroup>
           <h1 className="p-name">{title}</h1>
           <div className={styles.details}>
-            <span>{category}</span>
+            <span className="p-category">{category}</span>
             <span>{post.fields.readingTime.text}</span>
           </div>
         </hgroup>

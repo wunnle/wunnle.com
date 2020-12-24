@@ -75,6 +75,7 @@ export const pageQuery = graphql`
       fileAbsolutePath
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        isoDate: date(formatString: "YYYY-MM-DD HH:MM:SS")
         path
         title
         category
