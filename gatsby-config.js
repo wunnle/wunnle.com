@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Wunnle Blog`,
@@ -74,15 +78,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-webmention`,
       options: {
-        username: 'wunnle.com',
+        username: 'wunnle.com', // webmention.io username
         identity: {
+          // you need to specify at least one of the identities
+          // to be able to log in webmention.io
           github: 'wunnle',
-          twitter: 'wunnle'
+          twitter: 'wunnle', // no @
+          email: 'sinanaksay@gmail.com'
         },
         mentions: true,
-        pingbacks: true,
+        pingbacks: false,
+        //forwardPingbacksAsWebmentions: "https://example.com/endpoint",
         domain: 'wunnle.com',
-        token: process.env.WEBMENTIONS_TOKEN
+        fetchLimit: 10000, // number of webmentions to fetch
+        token: process.env.GATSBY_WEBMENTIONS_TOKEN
       }
     },
     `gatsby-plugin-react-helmet`,

@@ -41,15 +41,15 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
 
   return (
     <article className={[styles.post, 'h-card', 'h-entry'].join(' ')}>
-      <a class="u-url" style={{ display: 'none' }} href={`${siteUrl}${path}`}>
+      <a className="u-url" style={{ display: 'none' }} href={`${siteUrl}${path}`}>
         Link to the post
       </a>
-      <p class="p-summary e-content" style={{ display: 'none' }}>
+      <p className="p-summary e-content" style={{ display: 'none' }}>
         {excerpt}
       </p>
       <SEO title={title} image={imgUrl} description={excerpt} />
       <MeCard date={date} />
-      <time class="dt-published" datetime={isoDate} style={{ display: 'none' }}>
+      <time className="dt-published" dateTime={isoDate} style={{ display: 'none' }}>
         {isoDate}
       </time>
       <div className={styles.inner}>

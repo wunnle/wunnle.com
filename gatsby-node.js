@@ -1,9 +1,11 @@
 const path = require('path')
+const config = require('./gatsby-config')
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -35,6 +37,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {
+        permalink: `${config.siteMetadata.siteUrl}${node.frontmatter.path}`,
         prev: posts[(index - 1 + posts.length) % posts.length].node.frontmatter.path,
         next: posts[(index + 1) % posts.length].node.frontmatter.path
       }

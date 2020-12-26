@@ -15,7 +15,12 @@ function Template({ data, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!, $prev: String!, $next: String!) {
+  query BlogPostByPath(
+    $path: String!
+    $prev: String!
+    $next: String!
+    $permalink: String!
+  ) {
     site {
       siteMetadata {
         githubRepoUrl
@@ -67,6 +72,24 @@ export const pageQuery = graphql`
         readingTime {
           text
         }
+      }
+    }
+    mentions: webMentionEntry(wmTarget: { eq: $permalink }) {
+      wmTarget
+      wmSource
+      wmProperty
+      wmId
+      type
+      url
+      likeOf
+      author {
+        url
+        type
+        photo
+        name
+      }
+      content {
+        text
       }
     }
     post: markdownRemark(frontmatter: { path: { eq: $path } }) {
