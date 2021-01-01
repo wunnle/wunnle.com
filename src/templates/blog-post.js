@@ -5,17 +5,28 @@ import Layout from '../components/Layout'
 import Post from '../components/Post'
 
 function Template({ data, pageContext }) {
-  const { post, prev, next, site } = data
+  const { post, prev, next, site, mentions } = data
 
   return (
     <Layout>
-      <Post post={post} prevPost={prev} nextPost={next} siteData={site} />
+      <Post
+        post={post}
+        prevPost={prev}
+        nextPost={next}
+        siteData={site}
+        mentions={mentions.nodes}
+      />
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!, $prev: String!, $next: String!) {
+  query BlogPostByPath(
+    $path: String!
+    $prev: String!
+    $next: String!
+    $permalink: String!
+  ) {
     site {
       siteMetadata {
         githubRepoUrl
@@ -65,6 +76,29 @@ export const pageQuery = graphql`
       }
       fields {
         readingTime {
+          text
+        }
+      }
+    }
+    mentions: allWebMentionEntry(
+      filter: { wmTarget: { eq: $permalink } }
+      sort: { fields: wmReceived, order: ASC }
+    ) {
+      nodes {
+        wmTarget
+        wmProperty
+        wmReceived(formatString: "MMMM DD, YYYY")
+        wmId
+        type
+        url
+        likeOf
+        author {
+          url
+          type
+          photo
+          name
+        }
+        content {
           text
         }
       }

@@ -5,11 +5,12 @@ import EmailSubscription from '../EmailSubscription'
 import MeCard from '../MeCard'
 import NextPostCard from '../NextPostCard'
 import SEO from '../Seo'
+import Webmentions from '../Webmentions'
 import GithubIcon from './github.inline.svg'
 import styles from './Post.module.css'
 import TwitterIcon from './twitter.inline.svg'
 
-const Post = ({ post, prevPost, nextPost, siteData }) => {
+const Post = ({ post, prevPost, nextPost, siteData, mentions }) => {
   const {
     site: {
       siteMetadata: { siteUrl }
@@ -41,15 +42,15 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
 
   return (
     <article className={[styles.post, 'h-card', 'h-entry'].join(' ')}>
-      <a class="u-url" style={{ display: 'none' }} href={`${siteUrl}${path}`}>
+      <a className="u-url" style={{ display: 'none' }} href={`${siteUrl}${path}`}>
         Link to the post
       </a>
-      <p class="p-summary e-content" style={{ display: 'none' }}>
+      <p className="p-summary e-content" style={{ display: 'none' }}>
         {excerpt}
       </p>
       <SEO title={title} image={imgUrl} description={excerpt} />
       <MeCard date={date} />
-      <time class="dt-published" datetime={isoDate} style={{ display: 'none' }}>
+      <time className="dt-published" dateTime={isoDate} style={{ display: 'none' }}>
         {isoDate}
       </time>
       <div className={styles.inner}>
@@ -65,6 +66,7 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         ></div>
       </div>
+      <Webmentions mentions={mentions} />
       <div className={styles.footer}>
         {tweet && (
           <a

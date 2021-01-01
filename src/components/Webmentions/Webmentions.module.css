@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid rgba(222, 222, 222, 0.64);
+  padding-top: 30px
+}
+
+.titleGroup {
+  margin-bottom: 32px;
+}
+
+.title {
+  margin-bottom: 3px;
+}
+
+.counts {
+  font-size: 17px;
+  color: rgba(55, 56, 60, 0.73);
+}
+
+.mention {
+  display: flex;
+  font-size: 15px;
+}
+
+.mention + .mention {
+  margin-top: 25px;
+}
+
+.profilePhotoHolder {
+  width: 40px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  margin-top: 0px;
+}
+
+.profilePhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.author {
+  color: #3b4c56;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.mentionAction {
+  color: rgba(55, 56, 60, 0.73);
+}
+
+.content {
+  margin-top: -5px;
+}
+
+.mentionText {
+  font-size: 15px;
+  line-height: 20px;
+  color: #3b4c56;
+  margin-bottom: 0;
+}
+
+.url {
+  width: 350px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(0 121 255);
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .url {
+    width: 250px;
+    max-width: 250px;
+  }
+}
