@@ -16,16 +16,15 @@
 .details span {
   font-size: 13px;
   letter-spacing: 0.04em;
-  color: rgba(150, 150, 150, 0.8);
+  color: rgba(55, 56, 60, 0.63);
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 14px;
 }
 .details a {
-  font-weight: 500;
   line-height: normal;
   font-size: 13px;
-  color: rgba(150, 150, 150, 0.8);
+  color: rgba(55, 56, 60, 0.63);
   text-transform: uppercase;
   margin-bottom: -8px;
   margin-right: 14px;
