@@ -5,11 +5,12 @@ import EmailSubscription from '../EmailSubscription'
 import MeCard from '../MeCard'
 import NextPostCard from '../NextPostCard'
 import SEO from '../Seo'
+import Webmentions from '../Webmentions'
 import GithubIcon from './github.inline.svg'
 import styles from './Post.module.css'
 import TwitterIcon from './twitter.inline.svg'
 
-const Post = ({ post, prevPost, nextPost, siteData }) => {
+const Post = ({ post, prevPost, nextPost, siteData, mentions }) => {
   const {
     site: {
       siteMetadata: { siteUrl }
@@ -65,6 +66,7 @@ const Post = ({ post, prevPost, nextPost, siteData }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         ></div>
       </div>
+      <Webmentions mentions={mentions} />
       <div className={styles.footer}>
         {tweet && (
           <a

@@ -5,11 +5,17 @@ import Layout from '../components/Layout'
 import Post from '../components/Post'
 
 function Template({ data, pageContext }) {
-  const { post, prev, next, site } = data
+  const { post, prev, next, site, mentions } = data
 
   return (
     <Layout>
-      <Post post={post} prevPost={prev} nextPost={next} siteData={site} />
+      <Post
+        post={post}
+        prevPost={prev}
+        nextPost={next}
+        siteData={site}
+        mentions={mentions.nodes}
+      />
     </Layout>
   )
 }
@@ -74,22 +80,27 @@ export const pageQuery = graphql`
         }
       }
     }
-    mentions: webMentionEntry(wmTarget: { eq: $permalink }) {
-      wmTarget
-      wmSource
-      wmProperty
-      wmId
-      type
-      url
-      likeOf
-      author {
-        url
+    mentions: allWebMentionEntry(
+      filter: { wmTarget: { eq: $permalink } }
+      sort: { fields: wmReceived, order: ASC }
+    ) {
+      nodes {
+        wmTarget
+        wmProperty
+        wmReceived(formatString: "MMMM DD, YYYY")
+        wmId
         type
-        photo
-        name
-      }
-      content {
-        text
+        url
+        likeOf
+        author {
+          url
+          type
+          photo
+          name
+        }
+        content {
+          text
+        }
       }
     }
     post: markdownRemark(frontmatter: { path: { eq: $path } }) {
